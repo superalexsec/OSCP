@@ -1,8 +1,8 @@
 Information Gathering
 
-##
+####
 ## PASSSIVE ENUM
-##
+####
 
 #Whois
 whois domain.com -h DNS
@@ -22,9 +22,9 @@ Classify the website using security rules
 #SSLLabs
 Same as above
 
-##
-## ACTIVE ENUM
-##
+####
+## ACTIVE ENUM KALI
+####
 
 #host
 host -t domain.com
@@ -46,10 +46,70 @@ dnsrecon -d domain.com -D lista.txt -t brt
 dnsenum domain.com
 #Very complete form of DNS Recon
 
-###
+#NMap
+#/usr/share/nmap/scripts
+for i in $(seq 1 254); do echo 10.0.0.$i; done > listaIP.txt
+# Create IP List on a file
+#-sS Syn scan just inicialize 3way handshake, so the probes don't go to the logs on application layers
+#-sU will probe UDP Ports, but using with -sS can retrieve other ports
+#-sn Sweep Network, or PingSweep will check online hosts on network stealthy
+#-oG output grepable
+#cat resultado.txt | cut -d " " -f 2 #will recover the 2nd column of an nmap output grep with only live IPs
+#-A OSVersion, Scripts and Traceroute
+nmap --script-help http-headers
+# show help about script
+nmap -v -p 139,445 --script smb-os-discovery 10.0.0.10
+# Bring infos like domain name and fqdn
+sudo nmap -sU -p 161 10.0.0.1-20 --open -oG snmp.txt
+# Enum SNMP port on list of IPs
+
+#NBTScan
+sudo nbtscan -r 10.10.10.0/24/
+#retrieve NetBIOS name from the network hosts
+
+#SMTP Enum
+nc -nv 10.0.0.1 25
+VRFY username
+#can enumerate users in SMTP servers with responses
+
+# SNMP
+onesixtyone -c comunidade.txt -i listaIPs.txt
+# valida nomes de comunidades SNMP (public, private and manager
+snmpwalk -c public -v1 -t 10 10.0.0.1
+# check public community against a server
+snmpwalk -c public -v1 -t 10 10.0.0.1 1.3.6.1.4.1.77.1.2.25
+# check usernames on host
+snmpwalk -c public -v1 -t 10 10.0.0.1 1.3.6.1.2.1.25.4.2.1.2
+# running process
+snmpwalk -c public -v1 -t 10 10.0.0.1 1.3.6.1.2.1.25.6.4.1.2
+# Installed Apps
+snmpwalk -c public -v1 -t 10 10.0.0.1 1.3.6.1.2.1.6.13.1.3
+# Listening ports
+
+####
 ## ACTIVE ENUM WIN
-###
+####
+
+# Enable Telnet CLI
+dism /online /Enable-Feature /FeatureName:TelnetClient
 
 nslookup mail.domain.com
 nslookup -type=TXT sub.domain.com 192.168.0.2
 #specific query on TXT type at sub.domain.com using the 192.168.0.2 DNS Server
+
+Test-NetConnection -Port 443 10.10.10.10
+foreach ($porta in 1..1024) {If (($a=Test-NetConnection 10.10.10.10 -Port $porta -WarningAction SilentlyContinue).tcpTestSucceeded -eq $true){ "Porta TCP $porta aberta"}}
+
+net view \\dc00 /all
+#get info about dc00 with share type and description
+
+
+
+
+
+
+
+
+
+
+
