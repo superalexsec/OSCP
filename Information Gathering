@@ -1,0 +1,55 @@
+Information Gathering
+
+##
+## PASSSIVE ENUM
+##
+
+#Whois
+whois domain.com -h DNS
+
+#NetCraft
+Also shows applications running on website
+
+#GitHub
+username:domaincorp
+
+#Shodan
+hostname:domain.com
+
+#SecurityHeaders.com
+Classify the website using security rules
+
+#SSLLabs
+Same as above
+
+##
+## ACTIVE ENUM
+##
+
+#host
+host -t domain.com
+#-t can be "txt", "mx" or others
+
+for i in $(cat wordlist.txt); do host $i; done
+
+for i in $(seq 199 254); do host 192.168.10.$i; done | egrep -v "not found"
+# reverse lookup can find other hidden hosts
+
+#DNSRecon
+dnsrecon -d domain.com -t std
+#will perform standard enumeration on domain.com
+
+dnsrecon -d domain.com -D lista.txt -t brt
+#Bruteforce type using the lista.txt file
+
+#DNSEnum
+dnsenum domain.com
+#Very complete form of DNS Recon
+
+###
+## ACTIVE ENUM WIN
+###
+
+nslookup mail.domain.com
+nslookup -type=TXT sub.domain.com 192.168.0.2
+#specific query on TXT type at sub.domain.com using the 192.168.0.2 DNS Server
