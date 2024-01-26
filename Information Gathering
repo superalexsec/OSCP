@@ -14,7 +14,8 @@ Also shows applications running on website
 #GitHub
 owner:domaincorp path:users
 # Search for owner domaincorp that contains 'users' in path
-./gitleask -v -r=https://github.com/xpto
+./gitleak -v -r report.txt -s . # After git clone https://github.com/xpto/x
+# Need to better understand, can't make it work
 # GitRob, also used to search on github
 # Advanced: "Entropy-based detection attempts to find strings that are randomly generated. The idea is that a long string of random characters and numbers is probably a password."
 
