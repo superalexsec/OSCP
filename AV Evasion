@@ -44,7 +44,7 @@ Get-ExecutionPolicy -Scope CurrentUser
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 # The sintax is very obvious
 
-Thread Injection
+Thread Injection >>> X32 <<<
 ================================
 $code = '
 [DllImport("kernel32.dll")]
