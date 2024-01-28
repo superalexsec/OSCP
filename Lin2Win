@@ -1,0 +1,3 @@
+Kali
+$ xfreerdp +clipboard /v:IP /u:foo /p:bar
+# Rdp to a Win with clipboard
