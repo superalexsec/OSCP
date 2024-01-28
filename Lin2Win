@@ -1,3 +1,7 @@
 Kali
 $ xfreerdp +clipboard /v:IP /u:foo /p:bar
 # Rdp to a Win with clipboard
+
+ftp $target
+put file1.exe
+mput file1.exe file2.exe
