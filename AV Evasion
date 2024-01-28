@@ -1,3 +1,13 @@
+Modern antivirus have the following:
+File Engine
+Memory Engine
+Network Engine
+Disassembler
+Emulator/Sandbox
+Browser Plugin
+Machine Learning Engine
+
+
 Get-ExecutionPolicy -Scope CurrentUser
 # Check for the current exec policy of user on ps
 
