@@ -1,0 +1,11 @@
+Get-ExecutionPolicy -Scope CurrentUser
+# Check for the current exec policy of user on ps
+
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+# The sintax is very obvious
+
+https://github.com/darkoperator/powershell_scripts/blob/master/ps_encoder.py
+# Obfuscate an create oneliner to PS1
+
+Invoke-Expression ([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("YourBase64EncodedStringHere")))
+
