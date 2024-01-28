@@ -74,16 +74,20 @@ $winFunc::CreateThread(0,0,$x,0,0,0);for (;;) { Start-sleep 60 };
 ================================
 
 ###### SHELLTER ######
-Install
+# Install
 $ sudo apt install shellter
 $ sudo apt install wine
 $ sudo dpkg --add-architecture i386
 $ sudo apt-get update
 $ apt-get install wine32
 
-
-
-
+####### VEIL #######
+# Install
+git clone https://github.com/Veil-Framework/Veil.git
+cd Veil/
+./config/setup.sh
+# NEED TO INSTALL Wine on drive_c\Program Files, not (x86), or create a linked clone $ ln -s ori dest
+$ pip install pycryptodome
 
 
 
