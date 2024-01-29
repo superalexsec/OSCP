@@ -1,0 +1,7 @@
+sudo nmap -p80 --script=http-enum 192.168.x.1
+https://www.wappalyzer.com/
+
+gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
+# -u URL
+# -w Wordlist
+# -t Number of concurrent threads (default 10).
