@@ -5,3 +5,6 @@ $ xfreerdp +clipboard /v:IP /u:foo /p:bar
 ftp $target
 put file1.exe
 mput file1.exe file2.exe
+#ON FTP: Active mode with binary:
+>passive
+>binary
