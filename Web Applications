@@ -8,3 +8,8 @@ gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 
 gobuster dir -u http://192.168.1.1:55 -w /usr/share/wordlists/dirb/big.txt -p pattern
 # Inside pattern file we need to use {GOBUSTER}/v1 to show what part is needed to fuzz
+
+curl -d '{"password":"test1","username":"admin"}' -H 'Content-Type: application/json'  http://192.168.1.1:55/users/v1/login
+# will send json to API
+
+curl -d '{"password":"test1","username":"admiin","email":"test@test.com","admin":"True"}' -H 'Content-Type: application/json' http://192.168.1.1:55/users/v1/register
