@@ -1,5 +1,7 @@
 sudo nmap -p80 --script=http-enum 192.168.x.1
 https://www.wappalyzer.com/
+robots.txt
+sitemap.xml
 
 gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 # -u URL
@@ -9,6 +11,8 @@ gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 gobuster dir -u http://192.168.1.1:55 -w /usr/share/wordlists/dirb/big.txt -p pattern
 # Inside pattern file we need to use {GOBUSTER}/v1 to show what part is needed to fuzz
 
+------------XSS------------
+<script>alert(42)</script>
 
 ##############
 ## CURL
