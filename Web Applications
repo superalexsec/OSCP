@@ -4,6 +4,7 @@ robots.txt
 sitemap.xml
 HttpOnly prevents JavaScript
 Secure requires https, if not present we could intercept traffic.
+nonce prevents CSRF
 
 gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 # -u URL
