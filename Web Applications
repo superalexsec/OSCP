@@ -2,6 +2,8 @@ sudo nmap -p80 --script=http-enum 192.168.x.1
 https://www.wappalyzer.com/
 robots.txt
 sitemap.xml
+HttpOnly prevents JavaScript
+Secure requires https, if not present we could intercept traffic.
 
 gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 # -u URL
