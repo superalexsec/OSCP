@@ -29,7 +29,7 @@ ajaxRequest.open("POST", requestURL, true);
 ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 ajaxRequest.send(params);
 +------------------------------------
-# MinifyJS then encode, using Console in DevMode and this code:
+# https://jscompress.com/ to make one liner and below code encode, using Console in DevMode and this code:
 +------------------------------------
 function encode_to_javascript(string) {
             var input = string
