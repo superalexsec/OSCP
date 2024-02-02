@@ -15,6 +15,10 @@ gobuster dir -u http://192.168.1.1:55 -w /usr/share/wordlists/dirb/big.txt -p pa
 
 ------------XSS------------
 <script>alert(42)</script>
+# Simple alert test
+< > ' " { } ;
+# Most common chars for possible XSS
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 
 ##############
 ## CURL
