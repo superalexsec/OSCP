@@ -5,6 +5,7 @@ sitemap.xml
 HttpOnly prevents JavaScript
 Secure requires https, if not present we could intercept traffic.
 nonce prevents CSRF
+https://www.revshells.com/
 
 ------------XSS------------
 <script>alert(42)</script>
