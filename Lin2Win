@@ -8,3 +8,10 @@ mput file1.exe file2.exe
 #ON FTP: Active mode with binary:
 >passive
 >binary
+
+============= SSH =============
+Keys
+$ ssh-keygen
+# Generates 2 files:
+# "xpto.pub", which needs to be inserted on /root/.ssh/authorized_keys
+# "xpto" which will be used as private key to ssh -i
