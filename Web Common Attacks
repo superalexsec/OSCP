@@ -61,6 +61,7 @@ Easy: case sensitive
 URL Encondes:
 %20: " "
 %2e: "."
+# filters with php can be also bypassed with less common extensios as php7 or phps
 
 ======= COMMAND INJECTION ==========
 instead of using | to next cmd, try ;
