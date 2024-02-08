@@ -1,0 +1,10 @@
+mysql -u dbadmin -p'dbpass' -h 10.0.0.1 -P 3306
+select version();
+select system_user();
+show databases;
+SELECT user, authentication_string FROM mysql.user WHERE user = 'user01';
+impacket-mssqlclient dbadmin:dbpass@10.0.0.1 -windows-auth
+SELECT @@version;
+SELECT name FROM sys.databases;
+SELECT * FROM user01.information_schema.tables;
+select * from user01.dbo.users;
