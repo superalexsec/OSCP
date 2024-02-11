@@ -2,12 +2,20 @@ Kali
 $ xfreerdp +clipboard /v:IP /u:foo /p:bar
 # Rdp to a Win with clipboard
 
+===========================================
+============= FILE TRANSFER ===============
+===========================================
+
+============= FTP =============
 ftp $target
 put file1.exe
 mput file1.exe file2.exe
 #ON FTP: Active mode with binary:
 >passive
 >binary
+
+================= SMB =================
+smbclient //10.0.0.1/share -c 'put File1.exe'
 
 ============= SSH =============
 Keys
