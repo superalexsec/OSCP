@@ -1,0 +1,46 @@
+Save a file named config.Libray-ms
+
+With this content:
+WTF: libraryDescription shows the namespace for the version of the library file format starting from Windows 7
+==============================
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
+
+</libraryDescription>
+==============================
+
+Add this:
+WTF: version is arbritary, but name is the specific name of the lib, like @shell32.dll,-34575
+==============================
+<name>@windows.storage.dll,-34582</name>
+<version>6</version>
+==============================
+
+Next this:
+WTF: islibpinned will show at explorer as a dir; inconRef will show specific icon from win, "-1002" for the Documents folder
+==============================
+<isLibraryPinned>true</isLibraryPinned>
+<iconReference>imageres.dll,-1003</iconReference>
+==============================
+
+Then this:
+WTF: determine the columns and details that appear in Windows Explorer
+==============================
+<templateInfo>
+<folderType>{7d49d726-3c21-4f05-99aa-fdc2c9474656}</folderType>
+</templateInfo>
+==============================
+
+And this:
+WTF: Shows the location of WebDAV:
+==============================
+<searchConnectorDescriptionList>
+<searchConnectorDescription>
+<isDefaultSaveLocation>true</isDefaultSaveLocation>
+<isSupported>false</isSupported>
+<simpleLocation>
+<url>http://192.168.119.2</url>
+</simpleLocation>
+</searchConnectorDescription>
+</searchConnectorDescriptionList>
+==============================
