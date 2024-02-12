@@ -19,6 +19,7 @@ https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb
 smbclient //10.0.0.1/share -c 'put File1.exe'
 smbclient //host/share -U " "%" "
 smbclient --no-pass -L //$target
+xdg-open smb://host/share
 
 ============= SSH =============
 Keys
