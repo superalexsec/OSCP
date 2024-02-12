@@ -16,6 +16,7 @@ mput file1.exe file2.exe
 
 ================= SMB =================
 smbclient //10.0.0.1/share -c 'put File1.exe'
+smbclient //host/share -U " "%" "
 
 ============= SSH =============
 Keys
