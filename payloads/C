@@ -1,3 +1,3 @@
 mingw-w64
 # this tool compile C on Kali, as it would on windows.h
-i686-w64-mingw32-gcc code.c -o coded.exe
+i686-w64-mingw32-gcc code.c -o coded.exe -lws2_32
