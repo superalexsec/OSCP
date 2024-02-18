@@ -1,0 +1,6 @@
+
+# Find recursively kdbx files on C:
+Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
+
+# transform kdbx in hashes for john, to HashCat remove 'Database:' is needed:
+keepass2john Database.kdbx > keepass.hash
