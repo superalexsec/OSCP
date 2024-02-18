@@ -1,0 +1,20 @@
+/usr/share/wordlists
+
+# lines starting with 1 will be Deleted from file:
+sed -i '/^1/d' pass.txt
+
+# hashidentifier and hashid can identify hashes.
+
+# Using hashcat with MD5 (m 0) and rule.txt, --force will force CPU on VM:
+hashcat -m 0 hashes.txt /usr/share/wordlists/rockyou.txt -r rule.txt --force
+
+# Hashcat have rules
+/usr/share/hashcat/rules/
+$ hashcat -r rule.txt --stdout wordlist.txt
+# Sample content on rule.txt: "$1 c", if put in two lines, will do for each line 2 passwords
+# Append number 1:
+$1
+# Prepend number 1:
+^1
+# Capital:
+c
