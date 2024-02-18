@@ -1,0 +1,2 @@
+# Will recursively find kdbx files on C: in powershell:
+Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
