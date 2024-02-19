@@ -1,2 +1,6 @@
+LM hashes was disabled at 2008 server, but them has a limit of 14 chars, and if the pass has more than 7, it divides in 2 blocks and encrypts separately wih DES.
 To run Mimikatz as Admin and read the LSASS (wich need sys rights), we need to have a user with SeDebugPrivilege.
 To use Mimi TokenElevationFunction we need SeImpersonatePrivilege (like local admins by default).
+
+# Get Local users:
+Get-LocalUser
