@@ -1,0 +1,2 @@
+To run Mimikatz as Admin and read the LSASS (wich need sys rights), we need to have a user with SeDebugPrivilege.
+To use Mimi TokenElevationFunction we need SeImpersonatePrivilege (like local admins by default).
