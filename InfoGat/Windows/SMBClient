@@ -1,5 +1,14 @@
-# Will connect to a host with username and password:
+# Will connect to a host with blank username and password:
+smbclient \\\\host\\share -U " "%" "
 
+# Put a file in share:
+smbclient \\\\10.0.0.1\\share -c 'put File1.exe'
+
+# Will list shares on target:
+smbclient -L //$target -U
+
+# Will list shares without creds:
+smbclient --no-pass -L //$target
 
 # We can use SMBClient to interact with a 445 port using NTLM hash:
 smbclient \\\\10.0.0.2\\share -U Administrator --pw-nt-hash 7a38310ea6f002..5abed1762964b
