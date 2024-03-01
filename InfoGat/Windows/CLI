@@ -17,3 +17,4 @@ Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" |
 
 # Will recursively find kdbx files on C: in powershell:
 Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
+Get-ChildItem -Path C:\xpto -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue
