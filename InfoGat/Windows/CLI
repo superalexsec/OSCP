@@ -1,5 +1,9 @@
-# Will recursively find kdbx files on C: in powershell:
-Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
+# CMD
+whoami /groups
+systeminfo
+ipconfig /all
+route print
+netstat -ano
 
 # Get Local info:
 Get-LocalUser
@@ -11,8 +15,5 @@ Get-Process
 Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
 Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
 
-whoami /groups
-systeminfo
-ipconfig /all
-route print
-netstat -ano
+# Will recursively find kdbx files on C: in powershell:
+Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
