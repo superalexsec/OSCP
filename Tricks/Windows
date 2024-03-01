@@ -1,0 +1,2 @@
+# Will start a CMD with specific user:
+runas /user:administrator cmd
