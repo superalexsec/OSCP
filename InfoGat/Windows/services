@@ -1,0 +1,12 @@
+# Get running services:
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
+
+# Get permissions on bin:
+icacls C:\BackupMonitor\BackupMonitor.exe
+# Remember:
+I  Inherit
+F 	Full access
+M 	Modify access
+RX 	Read and execute access
+R 	Read-only access
+W 	Write-only access
