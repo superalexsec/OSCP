@@ -5,6 +5,9 @@ ipconfig /all
 route print
 netstat -ano
 
+# Will start a CMD with specific user:
+runas /user:administrator cmd
+
 # Get Local info:
 Get-LocalUser
 Get-LocalGroup
