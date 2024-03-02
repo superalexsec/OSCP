@@ -29,3 +29,6 @@ Get-ChildItem -Path C:\xpto -Include *.txt,*.ini -File -Recurse -ErrorAction Sil
 $password = ConvertTo-SecureString "Password123" -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential("superadmin", $password)
 Enter-PSSession -ComputerName CLIENTWK220 -Credential $cred
+
+# PowerShel loggin Script Block? Search the ID:
+Get-WinEvent -FilterHashtable @{logname = "Microsoft-Windows-PowerShell/Operational"; id = 4104 } | select -ExpandProperty message
