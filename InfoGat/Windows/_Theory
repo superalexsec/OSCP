@@ -9,3 +9,6 @@ S-1-5-domainidentifier-500    Administrator
 The security context of a token includes information about the user, the groups they belong to, their privileges, and additional details about the token's scope.
 When a user starts a process or thread, an associated token is assigned to these objects. This token, known as a primary token, defines the permissions that the process or thread has when working with other objects. It's essentially a duplicate of the user's access token.
 Additionally, a thread can be assigned an impersonation token. Impersonation tokens allow a thread to operate with a different security context than the owning process. In simpler terms, the thread can interact with objects as if it were someone else, using the impersonation token instead of the primary token of the process.
+
+# PowerShell
+User needs to be in the local group Windows Management Users to be a valid user for PS-Session
