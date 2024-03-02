@@ -16,6 +16,7 @@ Get-Process
 Get-History
 # If have history, where is it stored?
 (Get-PSReadlineOption).HistorySavePath
+# We can prevent PSReadline by setting the -HistorySaveStyle option to SaveNothing with the Set-PSReadlineOption Cmdlet.
 
 # Local Programs
 Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
@@ -32,3 +33,4 @@ Enter-PSSession -ComputerName CLIENTWK220 -Credential $cred
 
 # PowerShel loggin Script Block? Search the ID:
 Get-WinEvent -FilterHashtable @{logname = "Microsoft-Windows-PowerShell/Operational"; id = 4104 } | select -ExpandProperty message
+# We can prevent PSReadline by setting the -HistorySaveStyle option to SaveNothing with the Set-PSReadlineOption Cmdlet.
