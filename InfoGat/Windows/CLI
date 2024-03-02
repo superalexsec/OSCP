@@ -1,6 +1,7 @@
 # CMD
 whoami /groups
 whoami /priv
+# Above the Disabled state indicates for the running process, the privilege still is there.
 systeminfo
 ipconfig /all
 route print
