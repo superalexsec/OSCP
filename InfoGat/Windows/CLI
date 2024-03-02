@@ -1,5 +1,6 @@
 # CMD
 whoami /groups
+whoami /priv
 systeminfo
 ipconfig /all
 route print
