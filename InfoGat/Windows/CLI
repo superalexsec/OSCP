@@ -13,6 +13,9 @@ Get-LocalUser
 Get-LocalGroup
 Get-LocalGroupMember Administrators
 Get-Process
+Get-History
+# If have history, where is it stored?
+(Get-PSReadlineOption).HistorySavePath
 
 # Local Programs
 Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select displayname
@@ -21,3 +24,8 @@ Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*" |
 # Will recursively find kdbx files on C: in powershell:
 Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
 Get-ChildItem -Path C:\xpto -Include *.txt,*.ini -File -Recurse -ErrorAction SilentlyContinue
+
+# REMOTE SESSIONS
+$password = ConvertTo-SecureString "Password123" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential("superadmin", $password)
+Enter-PSSession -ComputerName CLIENTWK220 -Credential $cred
