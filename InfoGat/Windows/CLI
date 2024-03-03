@@ -1,11 +1,19 @@
-# CMD
+=========================== CMD ==============================
 whoami /groups
-# Disabled state indicates for the running process, but the privilege still is there:
-whoami /priv
 systeminfo
 ipconfig /all
 route print
 netstat -ano
+
+# Disabled state indicates for the running process, but the privilege still is there:
+whoami /priv
+# privileges to escalation:
+# SeImpersonatePrivilege
+# SeBackupPrivilege
+# SeAssignPrimaryToken
+# SeLoadDriver
+# SeDebug
+
 # Find unquoted paths on services outside Windows folder:
 wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
 # Scheduled tasks:
@@ -13,6 +21,8 @@ schtasks /query /fo LIST /v
 
 # Will start a CMD with specific user:
 runas /user:administrator cmd
+
+======================== PowersHell ============;===============
 
 # Get Local info:
 $env:path # see DLL hijacking
