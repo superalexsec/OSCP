@@ -1,1 +1,4 @@
 SeImpersonatePrivilege for privilege escalation. Variants from the Potato9 family (for example RottenPotato, SweetPotato, or JuicyPotato) are such tools. We should take the time to study these tools as they are an effective alternative to PrintSpoofer.
+
+# PrintSpoofer
+.\PrintSpoofer64.exe -i -c powershell.exe
