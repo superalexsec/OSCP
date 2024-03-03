@@ -2,6 +2,9 @@
 Stop-Service xpto
 Start-Service xpto
 
+# compile
+x86_64-w64-mingw32-gcc out.c -o out.exe
+
 # Get running services:
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
 
