@@ -1,11 +1,13 @@
 # CMD
 whoami /groups
+# Disabled state indicates for the running process, but the privilege still is there:
 whoami /priv
-# Above the Disabled state indicates for the running process, the privilege still is there.
 systeminfo
 ipconfig /all
 route print
 netstat -ano
+# Find unquoted paths on services:
+wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
 
 # Will start a CMD with specific user:
 runas /user:administrator cmd
