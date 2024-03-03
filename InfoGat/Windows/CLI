@@ -13,6 +13,7 @@ whoami /priv
 # SeAssignPrimaryToken
 # SeLoadDriver
 # SeDebug
+# IIS runs as LocalService, LocalSystem, NetworkService, or ApplicationPoolIdentity and them all have SeImpersonatePrivilege. 
 
 # Find unquoted paths on services outside Windows folder:
 wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
