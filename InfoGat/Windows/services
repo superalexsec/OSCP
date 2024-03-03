@@ -1,3 +1,7 @@
+# PS:
+Stop-Service xpto
+Start-Service xpto
+
 # Get running services:
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
 
