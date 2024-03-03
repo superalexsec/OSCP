@@ -11,6 +11,7 @@ netstat -ano
 runas /user:administrator cmd
 
 # Get Local info:
+$env:path # see DLL hijacking
 Get-LocalUser
 Get-LocalGroup
 Get-LocalGroupMember Administrators
