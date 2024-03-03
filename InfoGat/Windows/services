@@ -14,3 +14,12 @@ M 	Modify access
 RX 	Read and execute access
 R 	Read-only access
 W 	Write-only access
+
+=========== Unquoted Path Services =============
+# Unquoted Path Services finder outside Windows folder:
+wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
+# Checking the paths for W permissions:
+icacls "C:\"
+icacls "C:\Program Files"
+icacls "C:\Program Files\Xpto App"
+# If yes, we can create "C:\Program Files\Xpto.exe" and restart the service.
