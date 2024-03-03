@@ -36,3 +36,4 @@ LPVOID lpReserved ) // Reserved
     return TRUE;
 }
 ===============================
+x86_64-w64-mingw32-gcc dll.c --shared -o dll.dll
