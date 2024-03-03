@@ -8,6 +8,8 @@ route print
 netstat -ano
 # Find unquoted paths on services outside Windows folder:
 wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
+# Scheduled tasks:
+schtasks /query /fo LIST /v
 
 # Will start a CMD with specific user:
 runas /user:administrator cmd
