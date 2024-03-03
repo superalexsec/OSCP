@@ -19,6 +19,9 @@ whoami /priv
 wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
 # Scheduled tasks:
 schtasks /query /fo LIST /v
+schtasks /query /fo LIST /v | findstr "Name Next"
+schtasks /query /fo LIST /v | findstr "Name Next" | findstr /v Microsoft
+schtasks /query /fo LIST /v /tn NetcatTask
 
 # Will start a CMD with specific user:
 runas /user:administrator cmd
