@@ -1,6 +1,7 @@
 # Users
 id
 cat /etc/passwd
+env
 
 # OS
 hostname
