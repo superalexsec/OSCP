@@ -1,0 +1,5 @@
+# Wactch repeat the command to be like real time:
+watch -n 1 "ps -aux | grep pass"
+
+# TCP Dump in Ascii at interface loopback, grepping for pass:
+sudo tcpdump -i lo -A | grep "pass"
