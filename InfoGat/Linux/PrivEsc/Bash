@@ -1,3 +1,5 @@
+https://gtfobins.github.io/
+
 # /etc/passwd write:
 # If a password hash in the second column of /etc/passwd , it takes first over the entry in /etc/shadow.
 # Open SSL can use the default crypt algorithm, but some old sys can use DES or MD5
