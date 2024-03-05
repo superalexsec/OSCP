@@ -8,6 +8,8 @@ hostname
 cat /etc/os-release
 uname -a
 ps aux
+# Get info about the process 1932:
+grep Uid /proc/1932/status
 
 # Cron
 ls -lah /etc/cron*
