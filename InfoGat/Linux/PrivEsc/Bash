@@ -19,6 +19,9 @@ watch -n 1 "ps -aux | grep pass"
 # TCP Dump in Ascii at interface loopback, grepping for pass:
 sudo tcpdump -i lo -A | grep "pass"
 
+# Cron
+ls -lah /etc/cron*
+crontab -l
 # Check Crontab logs:
 grep "CRON" /var/log/syslog
 
