@@ -1,0 +1,5 @@
+cat /etc/issue
+uname -r
+arch
+# Sample: Ubuntu 22 kernel 4.4.0 x86_64
+searchsploit "linux kernel Ubuntu 22 Local Privilege Escalation" | grep  "4." | grep -v " < 4.4.0" | grep -v "4.8"
