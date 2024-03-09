@@ -3,6 +3,7 @@ KALI        --------------    Server1    ---------------   Server2
 ===========                ============                  ============
 Internet                  WAN        LAN-DMZ              LAN-DMZ
 
+# Writing "1" to /proc/sys/net/ipv4/conf/[interface]/forwarding
 # Run on Server1
 # ddd will be verbose
 # fork: create new subprocess once connected
