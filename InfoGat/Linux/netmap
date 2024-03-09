@@ -1,0 +1,1 @@
+for i in $(seq 1 254); do nc -zv -w 1 10.0.0.$i 445; done
