@@ -1,0 +1,11 @@
+===========                ============                  ============
+KALI        --------------    Server1    ---------------   Server2
+===========                ============                  ============
+Internet                  WAN        LAN-DMZ              LAN-DMZ
+
+# Run on Server1
+# ddd will be verbose
+# fork: create new subprocess once connected
+# TCP: targetIP and Port
+
+$ socat -ddd TCP-LISTEN:9833,fork TCP:10.0.0.2:3389
