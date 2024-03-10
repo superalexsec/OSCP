@@ -14,5 +14,8 @@ Will redirect to one IP:Port
 $ ssh -N -L 0.0.0.0:4455:192.168.0.2:445 admin@172.0.0.2
 
 # We need to use proxychains with this SSH proxy as socks5 destination.
-Will redirect all traffic to ssh:
+# Need to change timouts on proxychains to run NMap:
+# tcp_read_time_out 1500
+# tcp_connect_time_out 1500
+# Will redirect all traffic to ssh:
 $ ssh -N -D 0.0.0.0:999 admin@172.0.0.2
