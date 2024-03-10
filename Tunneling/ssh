@@ -10,4 +10,8 @@ Send traffic to 192.168.0.2:445
 Using ssh on admin@172.0.0.2
 N will prevent shell
 
+Will redirect to one IP:Port
 $ ssh -N -L 0.0.0.0:4455:192.168.0.2:445 admin@172.0.0.2
+
+Will redirect all traffic to ssh:
+$ ssh -N -D 0.0.0.0:999 admin@172.0.0.2
