@@ -1,6 +1,7 @@
 ===========                ============                  ============
 KALI        --------------    Server1    ---------------   Server2
  192.168.0.9         192.168.0.1 | 10.0.0.1               10.0.0.2
+                         2222                              22
 ===========                ============                  ============
 Internet                  WAN        LAN-DMZ              LAN-DMZ
 
@@ -10,3 +11,6 @@ Reqs:
 
 # Runs on public server1:
 $ socat TCP-LISTEN:2222,fork TCP:10.0.0.2:22
+
+# Runs on KALI, with 2 routes:
+$ sshuttle -r admin@192.168.0.1:2222 10.0.0.0/24 172.16.0.0/24
