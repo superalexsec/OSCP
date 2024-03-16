@@ -1,0 +1,19 @@
+# list content:
+\l
+
+# connect to database xpto:
+\c xpto
+
+# list tables on current db:
+\dt
+
+# get details on table xyz_tablename:
+\d+ xyz_tablename
+
+# get all from xyz_tablename:
+SELECT * FROM xyz_tablename;
+
+# List all users:
+\du
+
+https://www.postgresqltutorial.com/postgresql-cheat-sheet/
