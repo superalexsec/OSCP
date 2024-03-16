@@ -1,6 +1,12 @@
+===========                ============                  ============
+KALI        --------------    Server1    ---------------   Server2
+ 192.168.0.9         192.168.0.1 | 10.0.0.1               10.0.0.2
+===========                ============                  ============
+Internet                  WAN        LAN-DMZ              LAN-DMZ
+
 Reqs:
 -Python3
 -SSH
 
-# Runs on public server:
-$ socat TCP-LISTEN:2222,fork TCP:192.168.0.2:22
+# Runs on public server1:
+$ socat TCP-LISTEN:2222,fork TCP:10.0.0.2:22
