@@ -15,6 +15,7 @@ $ ssh -N -L 0.0.0.0:4455:192.168.0.2:445 admin@172.0.0.2
 
 # When we need to info gat on many ports, we use Dynamic Ports.
 # Once we use ProxyChains to send traffic trhough it we can make our lifes pretty easier.
+# OpenSSH client needs to be version 7.6 or above
 $ ssh -N -D 0.0.0.0:9999 admin@172.0.0.2
 
 # We need to use proxychains with this SSH proxy as socks5 destination.
