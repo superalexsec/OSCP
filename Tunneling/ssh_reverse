@@ -17,3 +17,8 @@ ssh -N -R 127.0.0.1:2345:172.0.0.2:5432 kali@10.0.0.9
 # Kali:
 psql -h 127.0.0.1 -p 2345 -U postgres
 
+
+DYNAMIC PORT FORWARD
+
+# If we need to run it through ProxyChains we can just point the port on Kali and set the SSH Connection:
+ssh -N -R 9998 kali@10.0.0.9 
