@@ -1,0 +1,6 @@
+Reqs:
+-Python3
+-SSH
+
+# Runs on public server:
+$ socat TCP-LISTEN:2222,fork TCP:192.168.0.2:22
