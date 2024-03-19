@@ -1,3 +1,10 @@
+===========             ============              ============
+KALI        -----------    Server1    -----------   Server2
+                  10.0.0.1   |  172.16.0.1         172.16.0.2
+                  2222                               22
+===========             ============               ============
+Internet              WAN        LAN-DMZ              LAN-DMZ
+
 
 # Create a firewall redirect rule:
-netsh.exe interface portproxy add v4tov4 listenport=2222 listenaddress=192.168.193.64 connectport=22 connectaddress=10.4.193.215
+netsh.exe interface portproxy add v4tov4 listenport=2222 listenaddress=10.0.0.1 connectport=22 connectaddress=172.16.0.2
