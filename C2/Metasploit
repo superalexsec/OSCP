@@ -42,6 +42,9 @@ MSF USAGE
 ======================
 search type:auxiliary smb
 
+# create process hidden from view:
+execute -H -f notepad
+
 # list availabley payloads for win 64:
 msfvenom -l payloads --platform windows --arch x64
 
