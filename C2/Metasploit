@@ -1,0 +1,49 @@
+# Create PostgreSQL database:
+$ sudo msfdb init
+
+# Enable Postgre:
+$ sudo systemctl enable postgresql
+
+# Check status:
+msf6 > db_status
+
+======================
+WORKSPACES
+======================
+# Workspaces can store assessments for different targets, so we don't mix it up:
+# Check workspaces:
+msf6 > workspace
+* default
+# Add workspace:
+msf6 > workspace -a offsec
+[*] Added workspace: offsec
+[*] Workspace: offsec
+
+# We can use DB_NMap tool to store info about the pentest:
+msf6 > db_nmap -A 10.0.0.1
+
+# Now we can check hosts:
+msf6 > hosts
+
+# Now we can check services:
+msf6 > services
+# Optionally we can select ports:
+msf6 > services -p 445
+
+# set as RHosts all services with port 445:
+services -p 445 --rhosts
+
+# Check for creds already bruteforced:
+creds
+========================
+
+======================
+MSF USAGE
+======================
+search type:auxiliary smb
+
+# set as RHosts all services with port 445:
+services -p 445 --rhosts
+
+# Check for possibly vulns from the module:
+vulns
