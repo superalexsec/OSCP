@@ -46,6 +46,11 @@ route print
 
 # Now we can use portscan aux to scan internal network through meterpreter session:
 use auxiliary/scanner/portscan/tcp
+
+# AutoRoute to meterpreter session 18:
+use multi/manage/autoroute
+set session 18
+run
 ========================
 
 ======================
