@@ -1,3 +1,10 @@
+DNSMasq is a basic funcional DNS Server that can be used to exfiltrate or infiltrate data using DNS UDP 53.
+
+======================
+======================
+KALI
+======================
+
 $ cat dnsmasq.conf
 ======================
 # Do not read /etc/resolv.conf or /etc/hosts
