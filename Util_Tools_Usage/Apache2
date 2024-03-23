@@ -1,0 +1,5 @@
+sudo cp SERVING_FILE /var/www/html/
+
+sudo systemctl start apache2
+
+tail -f /var/log/apache2/access.log
