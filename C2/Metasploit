@@ -37,12 +37,16 @@ services -p 445 --rhosts
 creds
 ========================
 
-
+========================
 PIVOTING
-# Add route to internal network 172.16.89.0 to session 17:
+========================
+# Add route to internal network 172.16.89.0 to meterpreter session 17:
 route add 172.16.89.0/24 17
 route print
 
+# Now we can use portscan aux to scan internal network through meterpreter session:
+use auxiliary/scanner/portscan/tcp
+========================
 
 ======================
 MSF USAGE
