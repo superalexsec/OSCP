@@ -51,6 +51,13 @@ use auxiliary/scanner/portscan/tcp
 use multi/manage/autoroute
 set session 18
 run
+
+# SOCKS auxiliary:
+use auxiliary/server/socks_proxy
+set SRVHOST 127.0.0.1
+set VERSION 5
+run -j
+tail /etc/proxychains4.conf # 127.0.0.1 1080
 ========================
 
 ======================
