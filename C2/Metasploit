@@ -42,6 +42,9 @@ MSF USAGE
 ======================
 search type:auxiliary smb
 
+# list availabley payloads for win 64:
+msfvenom -l payloads --platform windows --arch x64
+
 # set as RHosts all services with port 445:
 services -p 445 --rhosts
 
@@ -70,3 +73,4 @@ Interacting with channel 1...
 id
 uid=1(daemon) gid=1(daemon) groups=1(daemon)
 ======================
+
