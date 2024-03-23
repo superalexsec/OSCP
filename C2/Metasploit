@@ -47,3 +47,26 @@ services -p 445 --rhosts
 
 # Check for possibly vulns from the module:
 vulns
+
+# We can interact with differnet shells and put them on background using Channels:
+======================
+meterpreter > shell
+Process 196 created.
+Channel 2 created.
+whoami
+daemon
+^Z
+Background channel 2? [y/N]  y
+meterpreter > channel -l
+
+    Id  Class  Type
+    --  -----  ----
+    1   3      stdapi_process
+    2   3      stdapi_process
+
+meterpreter > channel -i 1
+Interacting with channel 1...
+
+id
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+======================
