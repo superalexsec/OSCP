@@ -40,8 +40,8 @@ creds
 ========================
 PIVOTING
 ========================
-# Add route to internal network 172.16.89.0 to meterpreter session 17:
-route add 172.16.89.0/24 17
+# Add route to internal network 192.168.0.0 to meterpreter session 17:
+route add 192.168.0.0/24 17
 route print
 
 # Now we can use portscan aux to scan internal network through meterpreter session:
@@ -58,6 +58,10 @@ set SRVHOST 127.0.0.1
 set VERSION 5
 run -j
 tail /etc/proxychains4.conf # 127.0.0.1 1080
+
+# Kali Port Fowarding from meterpreter session 18 to internal host 192.168.0.1
+meterpreter> portfwd add -l 3389 -p 3389 -r 192.168.0.1
+$ sudo xfreerdp /v:127.0.0.1 /u:username
 ========================
 
 ======================
