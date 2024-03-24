@@ -11,6 +11,7 @@ $ bloodhound
 
 ## USAGE ##
 
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module .\Sharphound.ps1
 Get-Help Invoke-BloodHound
 
