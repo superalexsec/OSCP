@@ -1,0 +1,11 @@
+Import-Module .\PowerView.ps1
+
+Get-NetDomain
+
+Get-NetUser | select cn
+
+Get-NetUser | select cn,pwdlastset,lastlogon
+
+Get-NetGroup | select cn
+
+Get-NetGroup "Sales" | select member
