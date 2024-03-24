@@ -3,13 +3,9 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
 Import-Module .\PowerView.ps1
 
-# Info about computer object in the domain:
-Get-NetComputer
-Get-NetComputer | select operatingsystem,dnshostname
-
-# Get info about the domain:
-Get-NetDomain
-
+===========================
+USERS
+===========================
 # Get info about users:
 Get-NetUser itman
 Get-NetUser | select cn
@@ -23,6 +19,12 @@ Get-ObjectAcl -Identity stephanie
 # Will return SID, so we can convert:
 Convert-SidToName S-1-5-21-1987xxx270-6xxx05905-1781xxx369-1104
 
+# Lets find out about users with the right ACL:
+Get-ObjectAcl -Identity "Management Department" | ? {$_.ActiveDirectoryRights -eq "GenericAll"} | select SecurityIdentifier,ActiveDirectoryRights
+
+=============================
+GROUPS
+=============================
 # Get info about groups:
 Get-NetGroup | select cn
 Get-NetGroup "Sales" | select member
@@ -32,3 +34,13 @@ Find-LocalAdminAccess
 
 # SPN
 Get-NetUser -SPN | select samaccountname,serviceprincipalname
+
+==========================
+OTHERS
+==========================
+# Info about computer object in the domain:
+Get-NetComputer
+Get-NetComputer | select operatingsystem,dnshostname
+
+# Get info about the domain:
+Get-NetDomain
