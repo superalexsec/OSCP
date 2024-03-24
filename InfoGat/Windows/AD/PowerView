@@ -15,6 +15,11 @@ Get-NetUser itman
 Get-NetUser | select cn
 Get-NetUser | select cn,pwdlastset,lastlogon
 
+# Get info about ACE in ACL from the User:
+Get-ObjectAcl -Identity stephanie
+# Will return SID, so we can convert:
+Convert-SidToName S-1-5-21-1987xxx270-6xxx05905-1781xxx369-1104
+
 # Get info about groups:
 Get-NetGroup | select cn
 Get-NetGroup "Sales" | select member
