@@ -21,3 +21,6 @@ Get-NetGroup "Sales" | select member
 
 # Find admin access on network:
 Find-LocalAdminAccess
+
+# SPN
+Get-NetUser -SPN | select samaccountname,serviceprincipalname
