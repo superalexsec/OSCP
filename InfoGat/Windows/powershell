@@ -6,6 +6,8 @@ get-smbshare
 # Remote shares:
 get-smbshare -CimSession "fileserver01"
 $env:path # see DLL hijacking
+
+dir env:
 Get-LocalUser
 Get-LocalGroup
 Get-LocalGroupMember Administrators
