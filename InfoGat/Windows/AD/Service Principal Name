@@ -1,0 +1,3 @@
+# We can obtain the IP address and port number of applications running on servers integrated with AD enumerating all SPNs in the domain without port scan. Setspn.exe, which is installed on Windows by default.
+
+setspn -L iis_service
