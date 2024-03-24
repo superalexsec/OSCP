@@ -1,4 +1,5 @@
 https://powersploit.readthedocs.io/en/latest/Recon/
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
 Import-Module .\PowerView.ps1
 
