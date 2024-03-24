@@ -11,6 +11,8 @@ $env:path # see DLL hijacking
 # Yes, at powershell:
 ls \\dc1.xpto.com\sysvol\xpto.com\
 cat \\dc1.xpto.com\sysvol\xpto.com\Policies\oldpolicy\old-policy-backup.xml
+# GPP-stored passwords are encrypted with AES-256, the private key has been posted on MSDN, but we can use Kali gpp-decrypt tool to decrypt it:
+# gpp-decrypt "+bsY0..d4/KgX...dO/vyepPfAN1zM...QDApgR92JE"
 
 dir env:
 Get-LocalUser
