@@ -6,3 +6,11 @@ $PrimDC = $DomainFull.PdcRoleOwner.Name
 
 # Store the Distinguished Name variable into the $DinstName variable
 $DistName = ([adsi]'').distinguishedName
+
+====================
+# Minimal Script
+====================
+$PrimDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
+$DistName = ([adsi]'').distinguishedName 
+$LDAPmine = "LDAP://$PDC/$DN"
+$LDAPmine
