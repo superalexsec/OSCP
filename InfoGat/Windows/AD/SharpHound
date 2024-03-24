@@ -1,5 +1,16 @@
 https://bloodhound.readthedocs.io/en/latest/data-collection/sharphound.html
 
+## INSTALL ON KALI ##
+
+$ sudo apt install bloodhound
+$ sudo neo4j start
+# Acess localhost:7474 with neo4j:neo4j (change pass req)
+# Start BloodHound:
+$ bloodhound
+
+
+## USAGE ##
+
 Import-Module .\Sharphound.ps1
 Get-Help Invoke-BloodHound
 
