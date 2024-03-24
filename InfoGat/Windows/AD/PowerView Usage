@@ -5,6 +5,8 @@ Import-Module .\PowerView.ps1
 
 Get-NetDomain
 
+Get-NetUser itman
+
 Get-NetUser | select cn
 
 Get-NetUser | select cn,pwdlastset,lastlogon
