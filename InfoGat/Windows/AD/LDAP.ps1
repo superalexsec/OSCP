@@ -10,7 +10,15 @@ $DistName = ([adsi]'').distinguishedName
 ====================
 # Minimal Script
 ====================
+# Get DomainObject:
 $PrimDC = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().PdcRoleOwner.Name
-$DistName = ([adsi]'').distinguishedName 
+# use COM adsi to get DistinguishedName and store on DistName var:
+$DistName = ([adsi]'').distinguishedName
+# Get full LDAP communication info:
 $LDAPmine = "LDAP://$PDC/$DN"
-$LDAPmine
+# Get the root entry point to reserarch:
+$direntrypoint = New-Object System.DirectoryServices.DirectoryEntry($LDAPmine)
+# Create new object to research:
+$dirsearch = New-Object System.DirectoryServices.DirectorySearcher($direntrypoint)
+# Use FindAll to dump it all:
+$dirsearch.FindAll()
