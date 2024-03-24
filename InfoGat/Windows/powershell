@@ -1,4 +1,5 @@
 # Get Local info:
+get-smbshare
 $env:path # see DLL hijacking
 Get-LocalUser
 Get-LocalGroup
