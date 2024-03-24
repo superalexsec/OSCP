@@ -18,3 +18,6 @@ Get-NetUser | select cn,pwdlastset,lastlogon
 # Get info about groups:
 Get-NetGroup | select cn
 Get-NetGroup "Sales" | select member
+
+# Find admin access on network:
+Find-LocalAdminAccess
