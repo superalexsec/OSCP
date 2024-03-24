@@ -1,1 +1,3 @@
+Need that Remote Registry is enabled on hosts.
+
 .\PsLoggedon.exe \\files04
