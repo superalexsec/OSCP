@@ -1,1 +1,2 @@
 net group "Management Group" alice /add /domain
+net group "Management Group" alice /del /domain
