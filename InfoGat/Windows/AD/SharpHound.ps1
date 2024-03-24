@@ -7,6 +7,7 @@ Get-Help Invoke-BloodHound
 # For more information, type: "get-help Invoke-BloodHound -detailed".
 # For technical information, type: "get-help Invoke-BloodHound -full"
 # SharpHound can do looping, will run cyclical queries, and it use the .BIN file for performance. But it is not required to BloodHound.
+# Can use ZipPassword to get protected zip.
 
 # Collect All:
 # CollectionMethod gather All data, except for local group policies. Then save it @desktop (Json+zip):
