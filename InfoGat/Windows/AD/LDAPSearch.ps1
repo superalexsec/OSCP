@@ -17,6 +17,7 @@ function LDAPSearch {
 
 # ====================================
 # USAGE:
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 Import-Module .\LDAPSearch.ps1
 
 # Get users from domain:
