@@ -1,3 +1,5 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
 # Store the domain object in the $DomainFull variable
 $DomainFull = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 
