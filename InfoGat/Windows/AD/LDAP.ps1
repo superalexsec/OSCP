@@ -20,5 +20,10 @@ $LDAPmine = "LDAP://$PDC/$DN"
 $direntrypoint = New-Object System.DirectoryServices.DirectoryEntry($LDAPmine)
 # Create new object to research:
 $dirsearch = New-Object System.DirectoryServices.DirectorySearcher($direntrypoint)
+
+
+# documentation have a lot of values of the samAccountType attribute, 0x30000000 (decimal 805306368) will enumerate all users in the domain:
+$dirsearcher.filter="samAccountType=805306368"
+
 # Use FindAll to dump it all:
 $dirsearch.FindAll()
