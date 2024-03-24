@@ -1,3 +1,5 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
 # Get Local info:
 
 ENUM SHARES
