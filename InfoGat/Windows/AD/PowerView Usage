@@ -5,6 +5,7 @@ Import-Module .\PowerView.ps1
 
 # Info about computer object in the domain:
 Get-NetComputer
+Get-NetComputer | select operatingsystem,dnshostname
 
 # Get info about the domain:
 Get-NetDomain
