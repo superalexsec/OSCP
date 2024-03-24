@@ -1,0 +1,1 @@
+net group "Management Group" alice /add /domain
