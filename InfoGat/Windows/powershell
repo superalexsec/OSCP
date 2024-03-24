@@ -1,5 +1,10 @@
 # Get Local info:
+
+ENUM SHARES
+# Local shares:
 get-smbshare
+# Remote shares:
+get-smbshare -CimSession "fileserver01"
 $env:path # see DLL hijacking
 Get-LocalUser
 Get-LocalGroup
