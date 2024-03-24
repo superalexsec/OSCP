@@ -14,6 +14,8 @@ function LDAPSearch {
 
 }
 
+
+# ====================================
 # USAGE:
 Import-Module .\LDAPSearch.ps1
 
