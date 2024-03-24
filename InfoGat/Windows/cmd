@@ -4,6 +4,7 @@ ipconfig /all
 route print
 netstat -ano
 net share
+net user /domain
 
 # Disabled state indicates for the running process, but the privilege still is there:
 whoami /priv
