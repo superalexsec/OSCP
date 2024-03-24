@@ -30,6 +30,7 @@ runas /user:administrator cmd
 ======================== PowersHell ============;===============
 
 # Get Local info:
+dir env:
 $env:path # see DLL hijacking
 Get-LocalUser
 Get-LocalGroup
