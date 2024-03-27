@@ -6,3 +6,10 @@ net user user01 /domain
 
 # Get groups on domain:
 net group /domain
+
+# Get info about group on domain:
+net group "Sales " /domain
+
+# Add and delete user from group:
+net group "Management" user01 /add /domain
+net group "Management" user01 /del /domain
