@@ -1,0 +1,8 @@
+# Get users in domain:
+net user /domain
+
+# Get info about user01:
+net user user01 /domain
+
+# Get groups on domain:
+net group /domain
