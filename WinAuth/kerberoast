@@ -1,4 +1,6 @@
-Use the TGS-REP mode
+If we have GenericWrite or GenericAll permissions on another AD user account we could set an SPN for the user, kerberoast the account and crack the password hash in an attack named targeted Kerberoasting.
+
+Use the TGS-REP mode for HashCat
 
 # Via KALI:
 sudo impacket-GetUserSPNs -request -dc-ip 10.0.0.2 superalex.sec/user01
