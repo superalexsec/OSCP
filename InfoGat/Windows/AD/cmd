@@ -3,6 +3,7 @@ net user /domain
 
 # Get info about user01:
 net user user01 /domain
+net user user01 Password123 /domain
 
 # Get groups on domain:
 net group /domain
