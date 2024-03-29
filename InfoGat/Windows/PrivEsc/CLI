@@ -11,7 +11,6 @@ whoami /priv
 # ACL:
 https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse
 
-# Find unquoted paths on services outside Windows folder:
-wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
+
 
 
