@@ -8,6 +8,9 @@ net user /domain
 net group /domain
 net group "Sales" /domain
 
+# Will get info about account policy:
+net accounts
+
 # Disabled state indicates for the running process, but the privilege still is there:
 whoami /priv
 # privileges to escalation:
