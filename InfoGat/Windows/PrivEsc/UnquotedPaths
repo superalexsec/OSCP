@@ -1,0 +1,2 @@
+# Find unquoted paths on services outside Windows folder:
+wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
