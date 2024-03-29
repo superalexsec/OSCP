@@ -8,11 +8,10 @@ whoami /priv
 # SeDebug
 # IIS runs as LocalService, LocalSystem, NetworkService, or ApplicationPoolIdentity and them all have SeImpersonatePrivilege. 
 
+# ACL:
+https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse
+
 # Find unquoted paths on services outside Windows folder:
 wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
 
-# Scheduled tasks:
-schtasks /query /fo LIST /v
-schtasks /query /fo LIST /v | findstr "Name Next"
-schtasks /query /fo LIST /v | findstr "Name Next" | findstr /v Microsoft
-schtasks /query /fo LIST /v /tn NetcatTask
+
