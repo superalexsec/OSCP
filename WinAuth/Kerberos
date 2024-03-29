@@ -1,0 +1,5 @@
+Authentication Server Request (AS-REQ)
+Authentication Server Reply (AS-REP) with Ticket Granting Ticket (TGT) with SessionKey
+If ticket expires (default 10 hours):
+Ticket Granting Service Request (TGS-REQ)
+Ticket Granting Server Reply (TGS-REP) with new SessionKey
