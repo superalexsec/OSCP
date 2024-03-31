@@ -8,6 +8,9 @@ net user /domain
 net group /domain
 net group "Sales" /domain
 
+# Check the tokens available:
+klist
+
 # Will get info about account policy:
 net accounts
 
