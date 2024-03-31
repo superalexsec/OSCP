@@ -1,0 +1,17 @@
+WMI use RPC (135), and higher ports.
+Need to be remote machine admin.
+
+# Will run notepad on remote server
+wmic /node:10.0.0.3 /user:admin /password:Secret1! process call create "notepad"
+
+# In PowersHell:
+================
+$username = 'admin';
+$password = 'Secret1!';
+$secureString = ConvertTo-SecureString $password -AsPlaintext -Force;
+$credential = New-Object System.Management.Automation.PSCredential $username, $secureString;
+$options = New-CimSessionOption -Protocol DCOM
+$session = New-Cimsession -ComputerName 10.0.0.3 -Credential $credential -SessionOption $Options 
+$command = 'notepad';
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine =$Command};
+================
