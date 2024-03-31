@@ -1,0 +1,10 @@
+# Use WinRM
+
+$username = 'admin';
+$password = 'Secret!';
+$secureString = ConvertTo-SecureString $password -AsPlaintext -Force;
+$credential = New-Object System.Management.Automation.PSCredential $username, $secureString;
+New-PSSession -ComputerName 10.0.0.3 -Credential $credential
+
+Enter-PSSession 1
+
