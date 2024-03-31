@@ -1,0 +1,5 @@
+# Require admin
+# ADMIN$ share (Default feature)
+# File and Print Sharing (Default feature)
+
+./PsExec64.exe -i  \\Server01 -u superalex\user01 -p Secret! cmd
