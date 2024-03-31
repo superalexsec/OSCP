@@ -1,3 +1,6 @@
+# Check the tokens available:
+klist
+
 # On Win:
 .\mimi.exe
 privilege::debug
