@@ -11,3 +11,6 @@ net use \\Server01
 
 # Now we have token:
 klist
+
+# And get session:
+.\PsExec.exe \\Server01 cmd
