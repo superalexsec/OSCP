@@ -1,0 +1,8 @@
+# Go to the folder:
+git status
+
+# Check the commits:
+git log
+
+# Check diff between commits:
+git show 612ff5783cc5d...a84aaf1
