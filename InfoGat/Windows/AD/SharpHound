@@ -1,14 +1,5 @@
 https://bloodhound.readthedocs.io/en/latest/data-collection/sharphound.html
 
-## INSTALL ON KALI ##
-
-$ sudo apt install bloodhound
-$ sudo neo4j start
-# Acess localhost:7474 with neo4j:neo4j (change pass req)
-# Start BloodHound:
-$ bloodhound
-
-
 ## USAGE ##
 
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
@@ -25,3 +16,22 @@ Get-Help Invoke-BloodHound
 # CollectionMethod gather All data, except for local group policies. Then save it @desktop (Json+zip):
 Invoke-BloodHound -CollectionMethod All -OutputDirectory C:\Users\xpto\Desktop\ -OutputPrefix "corp audit"
 
+=====================================
+
+# BLOODHOUND
+
+# Display all computers
+MATCH (m:Computer) RETURN m
+
+# Display all users
+MATCH (m:User) RETURN m
+
+=======================================
+
+## INSTALL ON KALI ##
+
+$ sudo apt install bloodhound
+$ sudo neo4j start
+# Acess localhost:7474 with neo4j:neo4j (change pass req)
+# Start BloodHound:
+$ bloodhound
