@@ -26,6 +26,9 @@ MATCH (m:Computer) RETURN m
 # Display all users
 MATCH (m:User) RETURN m
 
+# Users with Sessions:
+MATCH p = (c:Computer)-[:HasSession]->(m:User) RETURN p
+
 =======================================
 
 ## INSTALL ON KALI ##
