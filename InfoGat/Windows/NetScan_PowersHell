@@ -1,0 +1,2 @@
+# Test-NetConnection -Port 443 10.10.10.10
+foreach ($porta in 1..1024) {If (($a=Test-NetConnection 10.10.10.10 -Port $porta -WarningAction SilentlyContinue).tcpTestSucceeded -eq $true){ "Porta TCP $porta aberta"}}
