@@ -1,3 +1,4 @@
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
 https://powersploit.readthedocs.io/en/latest/Recon/
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
