@@ -4,3 +4,5 @@ To use Mimi TokenElevationFunction we need SeImpersonatePrivilege (like local ad
 
 # Get Local users:
 Get-LocalUser
+
+sudo hashcat -m 1000 hashes /usr/share/wordlists/rockyou.txt --force
