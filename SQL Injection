@@ -1,5 +1,9 @@
+https://github.com/sqlmapproject/sqlmap/wiki/Usage
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap
+https://www.comparitech.com/net-admin/sqlmap-cheat-sheet/
+https://cdn.comparitech.com/wp-content/uploads/2021/07/sqlmap-Cheat-Sheet.webp
+https://hacktricks.boitatech.com.br/pentesting-web/sql-injection/sqlmap
 
 #### Blind SQL ####
 ' OR 1=2 -- //
