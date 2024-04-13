@@ -1,3 +1,5 @@
+https://github.com/swisskyrepo/PayloadsAllTheThings
+
 sudo nmap -p80 --script=http-enum 192.168.x.1
 https://www.wappalyzer.com/
 robots.txt
