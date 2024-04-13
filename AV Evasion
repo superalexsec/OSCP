@@ -1,42 +1,7 @@
-#############
-## THEORY STUFF
-#############
-
-Modern antivirus components:
-File Engine
-Memory Engine
-Network Engine
-Disassembler
-Emulator/Sandbox
-Browser Plugin
-Machine Learning Engine
-
-Modern AV methodologies:
--Signature-Based Detection: Is when the filesystem is scanned for known malware signatures.
--Heuristic-Based Detection: Trying to break down the machine code and, in the end, decompile it for a thorough analysis of the source code to gain a more complete understanding of the program.
--Behavior-Based Detection:This is commonly done by running the respective file within an emulated environment, like a small virtual machine, and identifying behaviors or actions that are deemed malicious.
--Machine-Learning Detection: Microsoft Windows Defender consists of two machine learning components: the client ML engine, responsible for generating ML models and heuristics, and the cloud ML engine, capable of analyzing the provided sample against a metadata-based model encompassing all submitted samples. In cases where the client ML engine cannot ascertain whether a program is benign, it will seek a final response from the cloud ML counterpart.
-
-INMEMORY EVASION
--Remote Process Memory Injection: inject the payload into another valid PE that is not malicious. Initially, we employ the OpenProcess function to acquire a valid HANDLE to a target process for which we have appropriate access permissions. Subsequently, with the obtained HANDLE, we allocate memory within the context of that process through a Windows API like VirtualAllocEx. Once the memory has been allocated in the remote process, we transfer the malicious payload to the newly allocated memory using WriteProcessMemory. Following the successful copying of the payload, it is typically executed in memory as a separate thread using the CreateRemoteThread API.
--Reflective DLL Injection: Load a DLL that the attacker has stored in the process memory. The main problem with using this technique is that LoadLibrary can't load a DLL from memory, and there are no built-in Windows tools to handle this either. Attackers who use this method need to create their own version of the API, one that doesn't rely on a DLL stored on the disk.
--Process Hollowing: initiate the launch of a harmless process in a paused state. After starting, the process's image is erased from memory and substituted with a harmful executable image. Subsequently, the process is resumed, leading to the execution of malicious code instead of the original, legitimate process.
--Inline hooking: redirects trhough a hook for a function containing the malcode, which then returns to the original as it was never been used.
-
-ONDISK EVASION
-https://upx.github.io/
-# Packer avoid detection with less code possible
-
-Obfuscation:
-https://en.wikipedia.org/wiki/Dead_code
-# Dead code is used to def evasion through waste of memory and cpu usage
-
-https://www.enigmaprotector.com/en/home.html
-# Recomended by use of cryptography, in the website it says that uses a Virtual CPU making it more difficult to disassemble.
-
 ########
 ## TECH STUFF
 ########
+Get-MpComputerStatus
 
 Get-ExecutionPolicy -Scope CurrentUser
 # Check for the current exec policy of user on ps
@@ -88,6 +53,45 @@ cd Veil/
 ./config/setup.sh
 # NEED TO INSTALL Wine on drive_c\Program Files, not (x86), or create a linked clone $ ln -s ori dest
 $ pip install pycryptodome
+
+
+#############
+## THEORY STUFF
+#############
+
+Modern antivirus components:
+File Engine
+Memory Engine
+Network Engine
+Disassembler
+Emulator/Sandbox
+Browser Plugin
+Machine Learning Engine
+
+Modern AV methodologies:
+-Signature-Based Detection: Is when the filesystem is scanned for known malware signatures.
+-Heuristic-Based Detection: Trying to break down the machine code and, in the end, decompile it for a thorough analysis of the source code to gain a more complete understanding of the program.
+-Behavior-Based Detection:This is commonly done by running the respective file within an emulated environment, like a small virtual machine, and identifying behaviors or actions that are deemed malicious.
+-Machine-Learning Detection: Microsoft Windows Defender consists of two machine learning components: the client ML engine, responsible for generating ML models and heuristics, and the cloud ML engine, capable of analyzing the provided sample against a metadata-based model encompassing all submitted samples. In cases where the client ML engine cannot ascertain whether a program is benign, it will seek a final response from the cloud ML counterpart.
+
+INMEMORY EVASION
+-Remote Process Memory Injection: inject the payload into another valid PE that is not malicious. Initially, we employ the OpenProcess function to acquire a valid HANDLE to a target process for which we have appropriate access permissions. Subsequently, with the obtained HANDLE, we allocate memory within the context of that process through a Windows API like VirtualAllocEx. Once the memory has been allocated in the remote process, we transfer the malicious payload to the newly allocated memory using WriteProcessMemory. Following the successful copying of the payload, it is typically executed in memory as a separate thread using the CreateRemoteThread API.
+-Reflective DLL Injection: Load a DLL that the attacker has stored in the process memory. The main problem with using this technique is that LoadLibrary can't load a DLL from memory, and there are no built-in Windows tools to handle this either. Attackers who use this method need to create their own version of the API, one that doesn't rely on a DLL stored on the disk.
+-Process Hollowing: initiate the launch of a harmless process in a paused state. After starting, the process's image is erased from memory and substituted with a harmful executable image. Subsequently, the process is resumed, leading to the execution of malicious code instead of the original, legitimate process.
+-Inline hooking: redirects trhough a hook for a function containing the malcode, which then returns to the original as it was never been used.
+
+ONDISK EVASION
+https://upx.github.io/
+# Packer avoid detection with less code possible
+
+Obfuscation:
+https://en.wikipedia.org/wiki/Dead_code
+# Dead code is used to def evasion through waste of memory and cpu usage
+
+https://www.enigmaprotector.com/en/home.html
+# Recomended by use of cryptography, in the website it says that uses a Virtual CPU making it more difficult to disassemble.
+
+
 
 
 
