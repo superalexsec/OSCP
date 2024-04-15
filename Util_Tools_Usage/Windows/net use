@@ -1,2 +1,5 @@
 net group "Management Group" alice /add /domain
 net group "Management Group" alice /del /domain
+
+# Map shares with creds:
+net use x: \\172.16.0.1\c$ /user:superalexsec\user01 Pass01
