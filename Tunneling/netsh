@@ -7,7 +7,7 @@ Internet              WAN        LAN-DMZ              LAN-DMZ
 
 
 # Create a firewall redirect rule:
-```c
+```
 netsh.exe interface portproxy add v4tov4 listenport=2222 listenaddress=10.0.0.1 connectport=22 connectaddress=172.16.0.2
 ```
 
